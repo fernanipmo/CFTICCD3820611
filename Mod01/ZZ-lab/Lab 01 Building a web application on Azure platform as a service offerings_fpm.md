@@ -637,7 +637,7 @@ In this exercise, you created an Azure web app and deployed an existing web appl
 
    ![LAB01-Az204_67](Evidencia/LAB01-Az204_67.png)
 
-   ![LAB01-Az204_68png](Evidencia/LAB01-Az204_68png.png)
+   ![LAB01-Az204_68.png](Evidencia/LAB01-Az204_68.png)
 
 2. Close the Cloud Shell pane in the portal.
 
