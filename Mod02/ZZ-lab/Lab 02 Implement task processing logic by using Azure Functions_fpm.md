@@ -54,7 +54,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 **Architecture:**
 
-![LAB02_Az204_00_Architectur](Evidencia/LAB02_Az204_00_Architectur.png)
+![LAB02_Az204_00_Architecture](Evidencia/LAB02_Az204_00_Architecture.png)
 
 
 
