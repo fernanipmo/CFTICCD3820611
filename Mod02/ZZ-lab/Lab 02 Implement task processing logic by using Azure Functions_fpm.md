@@ -30,6 +30,12 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 - Windows Terminal
 - Visual Studio Code
 
+
+
+**Architecture**
+
+![LAB02_Az204_00_Architecture](Evidencia/LAB02_Az204_00_Architecture.png)
+
 ### Exercise 1: Create Azure resources
 
 #### Task 1: Open the Azure portal
@@ -40,23 +46,9 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 3. Enter the email address for your Microsoft account, and then select **Next**.
 
-4. Enter the password for your Microsoft account, and then select
-
-    
-
-   Sign in
-
-   .
+4. Enter the password for your Microsoft account, and then select Sign in.
 
    > **Note**: If this is your first time signing in to the Azure portal, you’ll be offered a tour of the portal. If you prefer to skip the tour, select **Get Started** to begin using the portal.
-
-
-
-**Architecture:**
-
-![LAB02_Az204_00_Architecture](Evidencia/LAB02_Az204_00_Architecture.png)
-
-
 
 #### Task 2: Create an Azure Storage account
 

@@ -1,22 +1,12 @@
 # Lab 04: Constructing a polyglot data solution
 
-# Student lab manual
+# Student lab answer key
 
-## Lab scenario
+## Microsoft Azure user interface
 
-You have been assigned the task of updating your company’s existing retail web application to use more than one data service in Microsoft Azure. Your company’s goal is to take advantage of the best data service for each application component. After conducting thorough research, you decide to migrate your inventory database from Azure SQL Database to Azure Cosmos DB.
+Given the dynamic nature of Microsoft cloud tools, you might experience Azure UI changes following the development of this training content. These changes might cause the lab instructions and steps to not match up correctly.
 
-## Objectives
-
-After you complete this lab, you will be able to:
-
-- Create instances of various database services by using the Azure portal.
-- Write C# code to connect to SQL Database.
-- Write C# code to connect to Azure Cosmos DB.
-
-## Lab setup
-
-- Estimated time: **45 minutes**
+Microsoft updates this training course when the community brings needed changes to our attention. However, because cloud updates occur frequently, you might encounter UI changes before this training content updates. **If this occurs, adapt to the changes, and then work through them in the labs as needed.**
 
 ## Instructions
 
@@ -24,10 +14,12 @@ After you complete this lab, you will be able to:
 
 #### Sign in to the lab virtual machine
 
-Ensure that you’re signed in to your Windows 10 virtual machine by using the following credentials:
+Sign in to your Windows 10 virtual machine (VM) by using the following credentials:
 
 - Username: **Admin**
 - Password: **Pa55w.rd**
+
+> **Note**: Instructions to connect to the virtual lab environment will be provided by your instructor.
 
 #### Review the installed applications
 
@@ -41,58 +33,123 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 #### Task 1: Open the Azure portal
 
-1. Sign in to the Azure portal ([https://portal.azure.com](https://portal.azure.com/)).
-2. If this is your first time signing in to the Azure portal, you’ll notice a dialog box offering a tour of the portal. Select the **Get Started** button to skip the tour.
+1. On the taskbar, select the **Microsoft Edge** icon.
+
+2. In the open browser window, browse to the Azure portal ([portal.azure.com](https://portal.azure.com/)).
+
+3. Enter the email address for your Microsoft account, and then select **Next**.
+
+4. Enter the password for your Microsoft account, and then select **Sign in**.
+
+   > **Note**: If this is your first time signing in to the Azure portal, you will be offered a tour of the portal. Select **Get Started** to skip the tour and begin using the portal.
 
 #### Task 2: Create an Azure SQL Database server resource
 
-1. Create a new **Azure SQL Database server (logical server)** resource with the following details:
+1. In the Azure portal’s navigation pane, select **All services**.
 
-   ![LAB04-Az204_01](C:\CFTICCD3820611\Mod04\ZZ-lab\Evidencia\LAB04-Az204_01.png)
+2. From the **All services** blade, select **SQL servers**.
 
-   - Server name: **polysqlsrvr\*[yourname]\***
-   - New resource group: **PolyglotData**
-   - Server admin login: **testuser**
-   - Password: **TestPa55w.rd**
-   - Location: **(US) East US**
-   - Allow Azure services to access server: **Yes**
+3. From the **SQL servers** blade, find your list of SQL server instances.
+
+4. From the **SQL servers** blade, select **New**.
+
+5. From the **Create SQL Database Server** blade, observe the tabs from the blade, such as **Basics**, **Networking**, and **Additional settings**.
+
+   > **Note**: Each tab represents a step in the workflow to create a new Azure SQL Database server. You can select **Review + Create** at any time to skip the remaining tabs.
+
+   1. From the **Basics** tab, perform the following actions:
+   2. Leave the **Subscription** drop-down list set to its default value.
+   3. In the **Resource group** section, select **Create new**, enter **PolyglotData**, and then select **OK**.
+   4. In the **Server name** text box, enter **polysqlsrvr\*[yourname]\***.
+   5. In the **Location** drop-down list, select **(US) East US**.
+   6. In the **Server admin login** text box, enter **testuser**.
+   7. In the **Password** text box, enter **TestPa55w.rd**.
+   8. In the **Confirm password** text box, enter **TestPa55w.rd** again.
+   9. Select **Next: Networking**.
+
+6. From the **Networking** tab, perform the following actions:
+
+   1. In the **Allow Azure services and resources to access this server** section, select **Yes**.
+   2. Select **Review + Create**.
+
+7. From the **Review + Create** tab, review the options that you selected during the previous steps.
+
+8. Select **Create** to create the SQL Database server by using your specified configuration.
 
    > **Note**: At this point in the lab, we are only creating the Azure SQL logical server. We will create the Azure SQL database instance later in the lab.
 
-   > **Note**: Wait for Azure to finish creating the SQL server instance before you move forward with the lab. You’ll receive a notification when the SQL server is created.
+   > **Note**: Wait for the creation task to complete before you move forward with this lab.
 
 #### Task 3: Create an Azure Cosmos DB account resource
 
-1. Create a new **Azure Cosmos DB** instance with the following details:
+1. In the Azure portal’s navigation pane, select **All services**.
 
-   - Account name: **polycosmos\*[yourname]\***
-   - Existing resource group: **PolyglotData**
-   - API: **Core (SQL)**
-   - Apply Free Tier Discount: **Do Not Apply**
-   - Location: **(US) East US**
-   - Account Type **Non-Production**
-   - Multi-region writes: **Disable**
+2. From the **All services** blade, select **Azure Cosmos DB**.
 
-   > **Note**: Wait for Azure to finish creating the Azure Cosmos DB account before you move forward with the lab. You’ll receive a notification when the Azure Cosmos DB account is created.
+3. From the **Azure Cosmos DB** blade, observe your list of Azure Cosmos DB instances.
 
-2. Go to the blade for your newly created Azure Cosmos DB account resource, and then open the Keys pane.
+4. From the **Azure Cosmos DB** blade, select **New**.
 
-3. In the Keys pane, record the value of the **PRIMARY CONNECTION STRING** text box.
+5. From the **Select API option** blade, select **Core (SQL) - Recommended**.
 
-   > **Note**: You’ll use these values later in this lab.
+6. From the **Create Azure Cosmos DB Account** blade, observe the tabs from the blade, such as **Basics**, **Network**, and **Tags**.
+
+   > **Note**: Each tab represents a step in the workflow to create a new Azure Cosmos DB account. You can select **Review + Create** at any time to skip the remaining tabs.
+
+7. From the **Basics** tab, perform the following actions:
+
+   1. Leave the **Subscription** list set to its default value.
+   2. In the **Resource group** section, select **PolyglotData** from the list.
+   3. In the **AccountName** text box, enter **polycosmos\*[yourname]\***.
+   4. In the **Location** drop-down list, select the **(US) East US** region.
+   5. In the **Capacity mode** section, select **Serverless**.
+   6. Select **Review + Create**.
+
+8. From the **Review + Create** tab, review the options that you selected during the previous steps.
+
+9. Select **Create** to create the Azure Cosmos DB account by using your specified configuration.
+
+   > **Note**: Wait for the creation task to complete before you move forward with this lab.
+
+10. In the Azure portal’s navigation pane, select the **Resource groups** link.
+
+11. From the **Resource groups** blade, find and then select the **PolyglotData** resource group that you created earlier in this lab.
+
+12. From the **PolyglotData** blade, select the **polycosmos\*[yourname]\*** Azure Cosmos DB account that you created earlier in this lab.
+
+13. From the **Azure Cosmos DB account** blade, find the **Settings** section from the blade, and then select the **Keys** link.
+
+14. In the Keys pane, record the value in the **PRIMARY CONNECTION STRING** text box. You’ll use this value later in this lab.
 
 #### Task 4: Create an Azure Storage account resource
 
-1. Create a new Azure Storage account with the following details:
+1. In the Azure portal’s navigation pane, select **All services**.
 
-   - Storage account name: **polystor\*[yourname]\***
-   - Existing resource group: **PolyglotData**
-   - Account kind: **StorageV2 (general purpose v2)**
-   - Location: **(US) East US**
-   - Replication: **Locally-redundant storage (LRS)**
-   - Performance: **Standard**
+2. From the **All services** blade, select **Storage Accounts**.
 
-   > **Note**: Wait for Azure to finish creating the storage account before you move forward with the lab. You’ll receive a notification when the storage account is created.
+3. From the **Storage accounts** blade, find your list of Storage instances.
+
+4. From the **Storage accounts** blade, select **New**.
+
+5. From the **Create storage account** blade, observe the tabs from the blade, such as **Basics**, **Advanced**, and **Tags**.
+
+   > **Note**: Each tab represents a step in the workflow to create a new Azure Storage account. You can select **Review + Create** at any time to skip the remaining tabs.
+
+6. From the **Basics** tab, perform the following actions:
+
+   1. Leave the **Subscription** list set to its default value.
+   2. In the **Resource group** section, select **PolyglotData** from the list.
+   3. In the **Storage account name** text box, enter **polystor\*[yourname]\***.
+   4. In the **Location** drop-down list, select the **(US) East US** region.
+   5. In the **Performance** section, select **Standard**.
+   6. In the **Redundancy** drop-down list, select **Locally-redundant storage (LRS)**.
+   7. Select **Review + Create**.
+
+7. From the **Review + Create** tab, review the options that you selected during the previous steps.
+
+8. Select **Create** to create the storage account by using your specified configuration.
+
+   > **Note**: Wait for the creation task to complete before you move forward with this lab.
 
 #### Review
 
@@ -102,94 +159,161 @@ In this exercise, you created all the Azure resources that you’ll need for a p
 
 #### Task 1: Upload image blobs
 
-1. Go to the blade for the **polystor\*[yourname]\*** Azure Storage account that you created earlier in this lab.
+1. In the Azure portal’s navigation pane, select the **Resource groups** link.
 
-2. Open the Containers pane, and then create a new container with the following settings:
+2. From the **Resource groups** blade, find and select the **PolyglotData** resource group that you created earlier in this lab.
 
-   - Name: **images**
-   - Public access level: **Blob (anonymous read access for blobs only)**
+3. From the **PolyglotData** blade, select the **polystor\*[yourname]\*** storage account that you created earlier in this lab.
 
-3. Go to the new **images** container, and then open the Properties pane.
+4. From the **Storage account** blade, select the **Containers** link in the **Data storage** section from the blade.
 
-4. In the Properties pane, record the value in the **URL** text box.
+5. In the **Containers** section, select **+ Container**.
 
-   > **Note**: You’ll use this value later in this lab.
+6. In the **New container** ollowing actions:
 
-5. Return to the blade for the **images** container.
+   1. In the **Name** text box, enter **images**.
+   2. In the **Public access level** drop-down list, select **Blob (anonymous read access for blobs only)**.
+   3. Select **Create**.
 
-6. Use the **Upload** button to upload the 42 individual **.jpg** image files in the **Allfiles (F):\Allfiles\Labs\04\Starter\Images** folder on your lab machine.
+7. Back in the **Containers** section, select the newly created **images** container.
 
-   > **Note**: We recommended that you enable the **Overwrite if files already exist** option.
+8. From the **Container** blade, find the **Settings** section from the blade, and then select the **Endpoints** link.
+
+9. In the Properties pane, record the value in the **Blob service** text box. You’ll use this value later in this lab.
+
+10. Find and select the **Overview** link from the blade.
+
+11. From the blade, select **Upload**.
+
+12. In the **Upload blob** pop-up, perform the following actions:
+
+    1. In the **Files** section, select the **Folder** icon.
+    2. In the **File Explorer** window, browse to **Allfiles (F):\Allfiles\Labs\04\Starter\Images**, select all 42 individual **.jpg** image files, and then select **Open**.
+    3. Ensure that **Overwrite if files already exist** is selected, and then select **Upload**.
+
+    > **Note**: Wait for all the blobs to upload before you continue with this lab.
 
 #### Task 2: Upload an SQL .bacpac file
 
-1. Go back to the blade for the **polystor\*[yourname]\*** Azure Storage account, and then open the Containers pane again.
+1. In the Azure portal’s navigation pane, select the **Resource groups** link.
 
-2. Create a new container with the following settings:
+2. From the **Resource groups** blade, find and select the **PolyglotData** resource group that you created earlier in this lab.
 
-   - Name: **databases**
-   - Public access level: **Private (no anonymous access)**
+3. From the **PolyglotData** blade, select the **polystor\*[yourname]\*** storage account that you created earlier in this lab.
 
-3. Go to the new **databases** container.
+4. From the **Storage account** blade, select the **Containers** link in the **Data storage** section from the blade.
 
-4. Use the **Upload** button to upload the **AdventureWorks.bacpac** file in the **Allfiles (F):\Allfiles\Labs\04\Starter\** folder on your lab machine.
+5. In the **Containers** section, select **+ Container**.
 
-   > **Note**: We recommended that you enable the **Overwrite if files already exist** option.
+6. In the **New container** pop-up, perform the following actions:
+
+   1. In the **Name** text box, enter **databases**.
+   2. In the **Public access level** drop-down list, select **Private (no anonymous access)**.
+   3. Select **OK**.
+
+7. Back in the **Containers** section, select the newly created **databases** container.
+
+8. From the **Container** blade, select **Upload**.
+
+9. In the **Upload blob** pop-up, perform the following actions:
+
+   1. In the **Files** section, select the **Folder** icon.
+   2. In the **File Explorer** window, browse to **Allfiles (F):\Allfiles\Labs\04\Starter**, select the **AdventureWorks.bacpac** file, and then select **Open**.
+   3. Ensure that **Overwrite if files already exist** is selected, and then select **Upload**.
+
+   > **Note**: Wait for the blob to upload before you continue with this lab.
 
 #### Task 3: Import an SQL database
 
-1. Go to the blade for the **polysqlsrvr\*[yourname]\*** SQL server resource that you created earlier in this lab.
+1. In the Azure portal’s navigation pane, select the **Resource groups** link.
 
-2. Import the database from your Azure Storage account into the SQL server instance by using the following details:
+2. From the **Resource groups** blade, find and select the **PolyglotData** resource group that you created earlier in this lab.
 
-   - Storage account: **polystor\*[yourname]\***
-   - Database backup blob: **databases\AdventureWorks.bacpac**
-   - Database name: **AdventureWorks**
-   - Server admin login: **testuser**
-   - Password: **TestPa55w.rd**
+3. From the **PolyglotData** blade, select the **polysqlsrvr\*[yourname]\*** SQL server that you created earlier in this lab.
+
+4. From the **SQL server** blade, select **Import database**.
+
+5. From the **Import database** blade, perform the following actions:
+
+   1. Leave the **Subscription** list set to its default value.
+   2. In the **Storage** section, select **Select backup**.
+   3. From the **Storage accounts** blade, select the **polystor\*[yourname]\*** storage account that you created earlier in this lab.
+   4. From the **Containers** blade, select the **databases** container that you created earlier in this lab.
+   5. From the **Container** blade, select the **AdventureWorks.bacpac** blob that you created earlier in this lab, and then select **Select** to close the blade.
+   6. Back from the **Import database** blade, leave the **Pricing tier** option set to its default value.
+   7. In the **Database name** text box, enter **AdventureWorks**.
+   8. Leave the **Collation** text box set to its default value.
+   9. In the **Server admin login** text box, enter **testuser**.
+   10. In the **Password** text box, enter **TestPa55w.rd**.
+   11. Select **OK**.
 
    > **Note**: Wait for the database to be created before you continue with this lab. If you receive a firewall-related error on the import step, it means you did not correctly configure the **Allow Azure services to access server** setting on your SQL Server earlier in the lab. Review your settings, delete the empty **AdventureWorks** database, and then attempt your import again.
 
 #### Task 4: Use an imported SQL database
 
-1. Go back to the blade for the **polysqlsrvr\*[yourname]\*** SQL server resource.
+1. In the Azure portal’s navigation pane, select the **Resource groups** link.
 
-2. Open the Firewalls and virtual networks pane.
+2. From the **Resource groups** blade, find and select the **PolyglotData** resource group that you created earlier in this lab.
 
-3. Add your current client IP address to the list of allowed IP addresses, and then save the list.
+3. From the **PolyglotData** blade, select the **polysqlsrvr\*[yourname]\*** SQL server that you created earlier in this lab.
 
-4. Go to the blade for the **AdventureWorks** SQL database resource that you recently imported.
+4. From the **SQL server** blade, find the **Security** section from the blade, and then select the **Firewalls and virtual networks** link.
 
-5. Open the Connection strings pane, and then record the value of the **ADO.NET (SQL Authentication)** connection string.
+5. In the Firewalls and virtual networks pane, perform the following actions:
 
-6. Update the connection string that you recorded by replacing the placeholder values for *your_username* and *your_password*
+   1. Select **Add client IP**
+   2. Select **Save**.
+   3. In the **Success!** confirmation dialog, select **OK**.
 
-   > **Note**: For example, if your connection string was originally `Server=tcp:polysqlsrvrinstructor.database.windows.net,1433;Initial Catalog=AdventureWorks;User ID={your_username};Password={your_password};`, your updated connection string will be `Server=tcp:polysqlsrvrinstructor.database.windows.net,1433;Initial Catalog=AdventureWorks;User ID=testuser;Password=TestPa55w.rd;`
+   > **Note**: This step will ensure that your local machine will have access to the databases that are associated with this server.
 
-7. Go back to the blade for the **AdventureWorks** SQL database resource.
+6. In the Azure portal’s navigation pane, select the **Resource groups** link.
 
-8. Open the Query editor pane, and then sign in by using the following credentials:
+7. From the **Resource groups** blade, find and select the **PolyglotData** resource group that you created earlier in this lab.
 
-   - Username: **testuser**
-   - Password: **TestPa55w.rd**
+8. From the **PolyglotData** blade, select the **AdventureWorks** SQL database that you created earlier in this lab.
 
-9. Run the following query, and then observe the results:
+9. From the **SQL database** blade, find the **Settings** section from the blade, and then select the **Connection strings** link.
 
-   CodeCopy
+10. In the Connection strings pane, record the value in the **ADO.NET (SQL Authentication)** text box. You’ll use this value later in this lab.
 
-   ```
-   SELECT * FROM AdventureWorks.dbo.Models
-   ```
+11. Update the connection string that you recorded by performing the following actions:
 
-   > **Note**: This query will return a list of models from the home page of the web application.
+    1. Within the connection string, find the *your_username* placeholder and replace it with **testuser**.
 
-10. Run this additional query, and then observe the results:
+    2. Within the connection string, find the *your_password* placeholder and replace it with **TestPa55w.rd**.
+
+       > **Note**: For example, if your connection string was originally `Server=tcp:polysqlsrvrinstructor.database.windows.net,1433;Initial Catalog=AdventureWorks;User ID={your_username};Password={your_password};`, your updated connection string will be `Server=tcp:polysqlsrvrinstructor.database.windows.net,1433;Initial Catalog=AdventureWorks;User ID=testuser;Password=TestPa55w.rd;`
+
+12. Find and select the **Query editor (preview)** link from the blade.
+
+13. In the Query editor pane, perform the following actions:
+
+    1. In the **Login** text box, enter **testuser**.
+    2. In the **Password** text box, enter **TestPa55w.rd**.
+    3. Select **OK**.
+
+14. In the open query editor, enter the following query:
+
+    CodeCopy
+
+    ```
+    SELECT * FROM AdventureWorks.dbo.Models
+    ```
+
+15. Select **Run** to run the query, and then observe the results.
+
+    > **Note**: This query will return a list of models from the home page of the web application.
+
+16. In the query editor, replace the existing query with the following query:
 
     CodeCopy
 
     ```
     SELECT * FROM AdventureWorks.dbo.Products
     ```
+
+17. Select **Run** to run the query, and then observe the results.
 
     > **Note**: This query will return a list of products that are associated with each model.
 
@@ -201,9 +325,15 @@ In this exercise, you imported all the resources that you’ll use with your web
 
 #### Task 1: Open and build the web application
 
-1. Using Visual Studio Code, open the solution folder found at **Allfiles (F):\Allfiles\Labs\04\Starter\AdventureWorks**.
+1. On the **Start** screen, select the **Visual Studio Code** tile.
 
-2. Using a terminal, build the .NET solution:
+2. From the **File** menu, select **Open Folder**.
+
+3. In the **File Explorer** window that opens, browse to **Allfiles (F):\Allfiles\Labs\04\Starter\AdventureWorks**, and then select **Select Folder**.
+
+4. In the **Visual Studio Code** window, right-click or activate the shortcut menu for the Explorer pane, and then select **Open in Terminal**.
+
+5. At the open command prompt, enter the following command, and then select Enter to build the .NET web application:
 
    CodeCopy
 
@@ -213,26 +343,55 @@ In this exercise, you imported all the resources that you’ll use with your web
 
    > **Note**: The **dotnet build** command will automatically restore any missing NuGet packages prior to building all projects in the folder.
 
-3. Close the current terminal.
+6. Observe the results of the build printed in the terminal. The build should complete successfully with no errors or warning messages.
+
+7. Select **Kill Terminal** or the **Recycle Bin** icon to close the currently open terminal and any associated processes.
 
 #### Task 2: Update the SQL connection string
 
-1. Open the **AdventureWorks.Web/appsettings.json** file in Visual Studio Code.
+1. In the Explorer pane of the **Visual Studio Code** window, expand the **AdventureWorks.Web** project.
 
-2. Replace the value of the *ConnectionStrings.AdventureWorksSqlContext* property with the **ADO.NET (SQL Authentication) connection string** of the SQL database that you recorded earlier in this lab.
+2. Open the **appsettings.json** file.
+
+3. In the JavaScript Object Notation (JSON) object on line 3, find the **ConnectionStrings.AdventureWorksSqlContext** path. Observe that the current value is empty:
+
+   CodeCopy
+
+   ```
+   "ConnectionStrings": {
+       "AdventureWorksSqlContext": "",
+       ...
+   },
+   ```
+
+4. Update the value of the **AdventureWorksSqlContext** property by setting its value to the **ADO.NET (SQL Authentication) connection string** of the SQL database that you recorded earlier in this lab.
 
    > **Note**: It’s important that you use your updated connection string here. The original connection string copied from the portal won’t have the username and password necessary to connect to the SQL database.
 
-3. Save the **appsettings.json** file.
+5. Save the **appsettings.json** file.
 
 #### Task 3: Update the blob base URL
 
-1. Replace the value of the *Settings.BlobContainerUrl* property with the *URL* property of the **Azure Storage** blob container named **images** that you recorded earlier in this lab.
-2. Save the **appsettings.json** file.
+1. In the JSON object on line 8, find the **Settings.BlobContainerUrl** path. Observe that the current value is empty:
+
+   CodeCopy
+
+   ```
+   "Settings": {
+       "BlobContainerUrl": "",
+       ...
+   }
+   ```
+
+2. Update the value of the **BlobContainerUrl** property by setting its value to the **URL** property of the Azure Storage blob container named **images** that you recorded earlier in this lab.
+
+3. Save the **appsettings.json** file.
 
 #### Task 4: Validate the web application
 
-1. Using a terminal, change your context to the **AdventureWorks.Web** folder:
+1. In the **Visual Studio Code** window, access the shortcut menu or right-click or activate the shortcut menu for the Explorer pane, and then select **Open in Terminal**.
+
+2. At the open command prompt, enter the following command, and then select Enter to switch your terminal context to the **AdventureWorks.Web** folder:
 
    CodeCopy
 
@@ -240,7 +399,7 @@ In this exercise, you imported all the resources that you’ll use with your web
    cd .\AdventureWorks.Web\
    ```
 
-2. Using the same terminal, run the ASP.NET web application project:
+3. At the command prompt, enter the following command, and then select Enter to run the .NET web application:
 
    CodeCopy
 
@@ -250,23 +409,19 @@ In this exercise, you imported all the resources that you’ll use with your web
 
    > **Note**: The **dotnet run** command will automatically build any changes to the project and then start the web application without a debugger attached. The command will output the URL of the running application and any assigned ports.
 
-3. Open the Microsoft Edge browser.
+4. On the taskbar, select the **Microsoft Edge** icon.
 
-4. In the open browser window, browse to the web application that’s hosted at **localhost** on port **5000**.
+5. In the open browser window, browse to the currently running web application ([http://localhost:5000](http://localhost:5000/)).
 
-   > **Note**: The URL is [http://localhost:5000](http://localhost:5000/).
+6. In the web application, observe the list of models displayed from the front page.
 
-5. In the web application, observe the list of models displayed from the front page.
+7. Find the **Water Bottle** model, and then select **View Details**.
 
-6. Find the **Water Bottle** model, and then select **View Details**.
+8. From the **Water Bottle** product detail page, find **Add to Cart**, and then observe that the checkout functionality is currently disabled.
 
-7. From the **Water Bottle** product detail page, find **Add to Cart**, and then observe that the checkout functionality is currently disabled.
+9. Close the browser window displaying your web application.
 
-8. Close the browser window that’s displaying your web application.
-
-9. Return to the **Visual Studio Code** window.
-
-10. Close the current terminal.
+10. Return to the **Visual Studio Code** window, and then select **Kill Terminal** or the **Recycle Bin** icon to close the currently open terminal and any associated processes.
 
 #### Review
 
@@ -276,7 +431,9 @@ In this exercise, you configured your ASP.NET web application to connect to your
 
 #### Task 1: Create a migration project
 
-1. Using a terminal, create a new .NET console project named **AdventureWorks.Migrate** in a folder with the same name:
+1. In the **Visual Studio Code** window, access the shortcut menu or right-click or activate the shortcut menu for the Explorer pane, and then select **Open in Terminal**.
+
+2. At the open command prompt, enter the following command, and then select Enter to create a new .NET console project named **AdventureWorks.Migrate** in a folder with the same name:
 
    CodeCopy
 
@@ -286,7 +443,7 @@ In this exercise, you configured your ASP.NET web application to connect to your
 
    > **Note**: The **dotnet new** command will create a new **console** project in a folder with the same name as the project.
 
-2. Using the same terminal, add a reference to the existing **AdventureWorks.Models** project:
+3. At the command prompt, enter the following command, and then select Enter to add a reference to the existing **AdventureWorks.Models** project:
 
    CodeCopy
 
@@ -296,7 +453,7 @@ In this exercise, you configured your ASP.NET web application to connect to your
 
    > **Note**: The **dotnet add reference** command will add a reference to the model classes contained in the **AdventureWorks.Models** project.
 
-3. Using the same terminal, add a reference to the existing **AdventureWorks.Context** project:
+4. At the command prompt, enter the following command, and then select Enter to add a reference to the existing **AdventureWorks.Context** project:
 
    CodeCopy
 
@@ -306,7 +463,7 @@ In this exercise, you configured your ASP.NET web application to connect to your
 
    > **Note**: The **dotnet add reference** command will add a reference to the context classes contained in the **AdventureWorks.Context** project.
 
-4. Using the same terminal, change your context to the **AdventureWorks.Migrate** folder:
+5. At the command prompt, enter the following command, and then select Enter to switch your terminal context to the **AdventureWorks.Migrate** folder:
 
    CodeCopy
 
@@ -314,7 +471,7 @@ In this exercise, you configured your ASP.NET web application to connect to your
    cd .\AdventureWorks.Migrate\
    ```
 
-5. Using the same terminal, import version 3.0.1 of **Microsoft.EntityFrameworkCore.SqlServer** from NuGet:
+6. At the command prompt, enter the following command, and then select Enter to import version 2.2.6 of **Microsoft.EntityFrameworkCore.SqlServer** from NuGet:
 
    CodeCopy
 
@@ -324,7 +481,7 @@ In this exercise, you configured your ASP.NET web application to connect to your
 
    > **Note**: The **dotnet add package** command will add the **Microsoft.EntityFrameworkCore.SqlServer** package from **NuGet**. For more information, go to: [Microsoft.EntityFrameworkCore.SqlServer](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/3.0.1).
 
-6. Using the same terminal, import version 3.4.1 of **Microsoft.Azure.Cosmos** from NuGet:
+7. At the command prompt, enter the following command, and then select Enter to import version 3.4.1 of **Microsoft.Azure.Cosmos** from NuGet:
 
    CodeCopy
 
@@ -334,7 +491,7 @@ In this exercise, you configured your ASP.NET web application to connect to your
 
    > **Note**: The **dotnet add package** command will add the **Microsoft.Azure.Cosmos** package from **NuGet**. For more information, go to: [Microsoft.Azure.Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/3.4.1).
 
-7. Using the same terminal, build the .NET console application:
+8. At the command prompt, enter the following command, and then select Enter to build the .NET console application:
 
    CodeCopy
 
@@ -342,72 +499,157 @@ In this exercise, you configured your ASP.NET web application to connect to your
    dotnet build
    ```
 
-8. Close the current terminal.
+9. Select **Kill Terminal** or the **Recycle Bin** icon to close the currently open terminal and any associated processes.
 
 #### Task 2: Create a .NET class
 
-1. Open the **AdventureWorks.Migrate/Program.cs** file in Visual Studio Code.
+1. In the Explorer pane of the **Visual Studio Code** window, expand the **AdventureWorks.Migrate** project.
 
-2. Delete all existing code in the **Program.cs** file.
+2. Open the **Program.cs** file.
 
-3. Add the following **using** directives for libraries that will be referenced by the application:
+3. From the code editor tab for the **Program.cs** file, delete all the code in the existing file.
+
+4. Add the following lines of code to import the **AdventureWorks.Models** and **AdventureWorks.Context** namespaces from the referenced **AdventureWorks.Models** and **AdventureWorks.Context** projects:
 
    CodeCopy
 
    ```
    using AdventureWorks.Context;
    using AdventureWorks.Models;
+   ```
+
+5. Add the following line of code to import the **Microsoft.Azure.Cosmos** namespace from the **Microsoft.Azure.Cosmos** package imported from NuGet:
+
+   CodeCopy
+
+   ```
    using Microsoft.Azure.Cosmos;
+   ```
+
+6. Add the following line of code to import the **Microsoft.EntityFrameworkCore** namespace from the **Microsoft.EntityFrameworkCore.SqlServer** package imported from NuGet:
+
+   CodeCopy
+
+   ```
    using Microsoft.EntityFrameworkCore;
+   ```
+
+7. Add the following lines of code to add **using** directives for the built-in namespaces that will be used in this file:
+
+   CodeCopy
+
+   ```
    using System;
    using System.Collections.Generic;
    using System.Linq;
    using System.Threading.Tasks;
    ```
 
-4. Create a new **Program** class with two constant string properties and an asynchronous **Main** entry point method:
+8. Enter the following code to create a new **Program** class:
 
    CodeCopy
 
    ```
    public class Program
    {
-       private const string sqlDBConnectionString = "";
-       private const string cosmosDBConnectionString = "";
-           
-       public static async Task Main(string[] args)
-       {
-       }
    }
    ```
 
-5. Update the **sqlDBConnectionString** string constant by setting its value to the **ADO.NET (SQL Authentication) connection string** of the SQL database that you recorded earlier in this lab.
-
-   > **Note**: It’s important that you use your updated connection string here. The original connection string copied from the portal won’t have the username and password necessary to connect to the SQL database.
-
-6. Update the **cosmosDBConnectionString** string constant by setting its value to the **PRIMARY CONNECTION STRING** of the Azure Cosmos DB account that you recorded earlier in this lab.
-
-#### Task 3: Get SQL database records by using Entity Framework
-
-1. Within the **Main** method, add the following blocks of code to export all model and product records from SQL Database to local memory:
+9. Within the **Program** class, enter the following line of code to create a new string constant named **sqlDBConnectionString**:
 
    CodeCopy
 
    ```
-   await Console.Out.WriteLineAsync("Start Migration");
-   
+   private const string sqlDBConnectionString = "";
+   ```
+
+10. Update the **sqlDBConnectionString** string constant by setting its value to the **ADO.NET (SQL Authentication) connection string** of the SQL database that you recorded earlier in this lab.
+
+    > **Note**: It’s important that you use your updated connection string here. The original connection string copied from the portal won’t have the username and password necessary to connect to the SQL database.
+
+11. Within the **Program** class, enter the following line of code to create a new string constant named **cosmosDBConnectionString**:
+
+    CodeCopy
+
+    ```
+    private const string cosmosDBConnectionString = "";
+    ```
+
+12. Update the **cosmosDBConnectionString** string constant by setting its value to the **PRIMARY CONNECTION STRING** of the Azure Cosmos DB account that you recorded earlier in this lab.
+
+13. Within the **Program** class, enter the following code to create a new asynchronous **Main** method:
+
+    CodeCopy
+
+    ```
+    public static async Task Main(string[] args)
+    {
+    }
+    ```
+
+14. Within the **Main** method, add the following line of code to print an introductory message to the console:
+
+    CodeCopy
+
+    ```
+    await Console.Out.WriteLineAsync("Start Migration");
+    ```
+
+15. Save the **Program.cs** file.
+
+16. In the **Visual Studio Code** window, access the shortcut menu or right-click or activate the shortcut menu for the Explorer pane, and then select **Open in Terminal**.
+
+17. At the open command prompt, enter the following command, and then select Enter to switch your terminal context to the **AdventureWorks.Migrate** folder:
+
+    CodeCopy
+
+    ```
+    cd .\AdventureWorks.Migrate\
+    ```
+
+18. At the command prompt, enter the following command, and then select Enter to build the .NET console application:
+
+    CodeCopy
+
+    ```
+    dotnet build
+    ```
+
+19. Select **Kill Terminal** or the **Recycle Bin** icon to close the currently open terminal and any associated processes.
+
+#### Task 3: Get SQL database records by using Entity Framework
+
+1. Within the **Main** method of the **Program** class within the **Program.cs** file, add the following line of code to create a new instance of the **AdventureWorksSqlContext** class, passing in the *sqlDBConnectionString* variable as the connection string value:
+
+   CodeCopy
+
+   ```
    using AdventureWorksSqlContext context = new AdventureWorksSqlContext(sqlDBConnectionString);
-   
+   ```
+
+2. Within the **Main** method, add the following block of code to issue a language-integrated query (LINQ) to get all **Models** and child **Products** from the database and store them in an in-memory **List<>** collection:
+
+   CodeCopy
+
+   ```
    List<Model> items = await context.Models
        .Include(m => m.Products)
        .ToListAsync<Model>();
-   
+   ```
+
+3. Within the **Main** method, add the following line of code to print the number of records imported from SQL Database:
+
+   CodeCopy
+
+   ```
    await Console.Out.WriteLineAsync($"Total Azure SQL DB Records: {items.Count}");
    ```
 
-2. Save the **Program.cs** file.
+4. Save the **Program.cs** file.
 
-3. Using a terminal, change your context to the **AdventureWorks.Migrate** folder:
+5. In the **Visual Studio Code** window, access the shortcut menu or right-click or activate the shortcut menu for the Explorer pane, and then select **Open in Terminal**.
+
+6. At the open command prompt, enter the following command, and then select Enter to switch your terminal context to the **AdventureWorks.Migrate** folder:
 
    CodeCopy
 
@@ -415,7 +657,7 @@ In this exercise, you configured your ASP.NET web application to connect to your
    cd .\AdventureWorks.Migrate\
    ```
 
-4. Using the same terminal, build the .NET console application project:
+7. At the command prompt, enter the following command, and then select Enter to build the .NET console application:
 
    CodeCopy
 
@@ -425,57 +667,104 @@ In this exercise, you configured your ASP.NET web application to connect to your
 
    > **Note**: If there are any build errors, review the **Program.cs** file in the **Allfiles (F):\Allfiles\Labs\04\Solution\AdventureWorks\AdventureWorks.Migrate** folder.
 
-5. Close the current terminal.
+8. Select **Kill Terminal** or the **Recycle Bin** icon to close the currently open terminal and any associated processes.
 
 #### Task 4: Insert items into Azure Cosmos DB
 
-1. Still within the **Main** method, add the following blocks of code to import the in-memory model and product data as documents to Azure Cosmos DB:
+1. Within the **Main** method of the **Program** class within the **Program.cs** file, add the following line of code to create a new instance of the **CosmosClient** class, passing in the *cosmosDBConnectionString* variable as the connection string value:
 
    CodeCopy
 
    ```
    using CosmosClient client = new CosmosClient(cosmosDBConnectionString);
-   
+   ```
+
+2. Within the **Main** method, add the following line of code to create a new **database** named **Retail** if it doesn’t already exist in the Azure Cosmos DB account:
+
+   CodeCopy
+
+   ```
    Database database = await client.CreateDatabaseIfNotExistsAsync("Retail");
-   
+   ```
+
+3. Within the **Main** method, add the following block of code to create a new **container** named **Online** if it doesn’t already exist in the Azure Cosmos DB account with a partition key path of **/Category** and a throughput of **1000** Request Units:
+
+   CodeCopy
+
+   ```
    Container container = await database.CreateContainerIfNotExistsAsync("Online",
        partitionKeyPath: $"/{nameof(Model.Category)}",
        throughput: 1000
    );
-   
+   ```
+
+4. Within the **Main** method, add the following line of code to create an *int* variable named **count**:
+
+   CodeCopy
+
+   ```
    int count = 0;
+   ```
+
+5. Within the **Main** method, add the following block of code to create a **foreach** loop that iterates over the objects in the **items** collection:
+
+   CodeCopy
+
+   ```
    foreach (var item in items)
    {
-       ItemResponse<Model> document = await container.UpsertItemAsync<Model>(item);
-       await Console.Out.WriteLineAsync($"Upserted document #{++count:000} [Activity Id: {document.ActivityId}]");
    }
-   
+   ```
+
+6. Within the **foreach** loop in the **Main** method, add the following line of code to **upsert** the object into the Azure Cosmos DB collection and save the result in a variable of type *ItemResponse<>* named **document**:
+
+   CodeCopy
+
+   ```
+   ItemResponse<Model> document = await container.UpsertItemAsync<Model>(item);
+   ```
+
+7. Within the **foreach** loop contained in the **Main** method, add the following line of code to print the activity ID of each upsert operation:
+
+   CodeCopy
+
+   ```
+   await Console.Out.WriteLineAsync($"Upserted document #{++count:000} [Activity Id: {document.ActivityId}]");
+   ```
+
+8. Back within the **Main** method (outside of the **foreach** loop), add the following line of code to print the number of documents exported to Azure Cosmos DB:
+
+   CodeCopy
+
+   ```
    await Console.Out.WriteLineAsync($"Total Azure Cosmos DB Documents: {count}");
    ```
 
-2. Save the **Program.cs** file.
+9. Save the **Program.cs** file.
 
-3. Using a terminal, change your context to the **AdventureWorks.Migrate** folder:
+10. In the **Visual Studio Code** window, access the shortcut menu or right-click or activate the shortcut menu for the Explorer pane, and then select **Open in Terminal**.
 
-   CodeCopy
+11. At the open command prompt, enter the following command, and then select Enter to switch your terminal context to the **AdventureWorks.Migrate** folder:
 
-   ```
-   cd .\AdventureWorks.Migrate\
-   ```
+    CodeCopy
 
-4. Using the same terminal, build the .NET console application project:
+    ```
+    cd .\AdventureWorks.Migrate\
+    ```
 
-   CodeCopy
+12. At the command prompt, enter the following command, and then select Enter to build the .NET console application:
 
-   ```
-   dotnet build
-   ```
+    CodeCopy
 
-   > **Note**: If there are any build errors, review the **Program.cs** file in the **Allfiles (F):\Allfiles\Labs\04\Solution\AdventureWorks\AdventureWorks.Migrate** folder.
+    ```
+    dotnet build
+    ```
+
+    > **Note**: If there are any build errors, review the **Program.cs** file in the **Allfiles (F):\Allfiles\Labs\04\Solution\AdventureWorks\AdventureWorks.Migrate** folder.
 
 #### Task 5: Perform a migration
 
-1. Using the same terminal, run the .NET console application project:
+1. At the open command prompt, enter the following command, and then select Enter to run the .NET console application:
 
    CodeCopy
 
@@ -487,19 +776,27 @@ In this exercise, you configured your ASP.NET web application to connect to your
 
 2. Observe the various data that prints to the screen, including initial SQL record count, individual upsert activity identifiers, and final Azure Cosmos DB document count.
 
-3. Close the current terminal.
+3. Select **Kill Terminal** or the **Recycle Bin** icon to close the currently open terminal and any associated processes.
 
 #### Task 6: Validate the migration
 
 1. Return to the **Microsoft Edge** browser window with the Azure portal.
 
-2. Go to the blade for the **polycosmos\*[yourname]\*** Azure Cosmos DB account that you created earlier in this lab.
+2. In the Azure portal’s navigation pane, select the **Resource groups** link.
 
-3. Open the Data Explorer pane.
+3. From the **Resource groups** blade, find and select the **PolyglotData** resource group that you created earlier in this lab.
 
-4. Create a new **SQL query** tab within the context of the **Retail** database and **Online** container.
+4. From the **PolyglotData** blade, select the **polycosmos\*[yourname]\*** Azure Cosmos DB account that you created earlier in this lab.
 
-5. Run the following query, and then observe the results:
+5. From the **Azure Cosmos DB account** blade, find and select the **Data Explorer** link from the blade.
+
+6. In the Data Explorer pane, expand the **Retail** database node.
+
+7. Expand the **Online** container node, and then select **New SQL Query**.
+
+   > **Note**: The label for this option might be hidden. You can get labels by hovering over the icons in the Data Explorer pane.
+
+8. From the query tab, enter the following text:
 
    CodeCopy
 
@@ -507,13 +804,19 @@ In this exercise, you configured your ASP.NET web application to connect to your
    SELECT * FROM models
    ```
 
-6. Run the following query, and then observe the results:
+9. Select **Execute Query**, and then observe the list of JSON models that the query returns.
 
-   CodeCopy
+10. Back in the query editor, replace the existing text with the following text:
 
-   ```
-   SELECT VALUE COUNT(1) FROM models
-   ```
+    CodeCopy
+
+    ```
+    SELECT VALUE COUNT(1) FROM models
+    ```
+
+11. Select **Execute Query**, and then observe the result of the **COUNT** aggregate operation.
+
+12. Return to the **Visual Studio Code** window.
 
 #### Review
 
@@ -523,7 +826,9 @@ In this exercise, you used Entity Framework and the .NET SDK for Azure Cosmos DB
 
 #### Task 1: Update library with the Cosmos SDK and references
 
-1. Using a terminal, change your context to the **AdventureWorks.Context** folder:
+1. In the **Visual Studio Code** window, access the shortcut menu or right-click or activate the shortcut menu for the Explorer pane, and then select **Open in Terminal**.
+
+2. At the open command prompt, enter the following command, and then select Enter to switch your terminal context to the **AdventureWorks.Context** folder:
 
    CodeCopy
 
@@ -531,7 +836,7 @@ In this exercise, you used Entity Framework and the .NET SDK for Azure Cosmos DB
    cd .\AdventureWorks.Context\
    ```
 
-2. Using the same terminal, import **Microsoft.Azure.Cosmos** from NuGet:
+3. At the command prompt, enter the following command, and then select Enter to import **Microsoft.Azure.Cosmos** from NuGet:
 
    CodeCopy
 
@@ -541,7 +846,7 @@ In this exercise, you used Entity Framework and the .NET SDK for Azure Cosmos DB
 
    > **Note**: The **dotnet add package** command will add the **Microsoft.Azure.Cosmos** package from **NuGet**. For more information, go to: [Microsoft.Azure.Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/3.4.1).
 
-3. Using the same terminal, build the ASP.NET web application project:
+4. At the command prompt, enter the following command, and then select Enter to build the .NET web application:
 
    CodeCopy
 
@@ -549,27 +854,45 @@ In this exercise, you used Entity Framework and the .NET SDK for Azure Cosmos DB
    dotnet build
    ```
 
-4. Close the current terminal.
+5. Select **Kill Terminal** or the **Recycle Bin** icon to close the currently open terminal and any associated processes.
 
 #### Task 2: Write .NET code to connect to Azure Cosmos DB
 
-1. Create a new **AdventureWorks.Context/AdventureWorksCosmosContext.cs** file in Visual Studio Code.
+1. In the Explorer pane of the **Visual Studio Code** window, expand the **AdventureWorks.Context** project.
 
-2. Add the following **using** directives for libraries that will be referenced by the application:
+2. Access the shortcut menu or right-click or activate the shortcut menu for the **AdventureWorks.Context** folder node, and then select **New File**.
+
+3. At the new file prompt, enter **AdventureWorksCosmosContext.cs**.
+
+4. From the code editor tab for the **AdventureWorksCosmosContext.cs** file, add the following lines of code to import the **AdventureWorks.Models** namespace from the referenced **AdventureWorks.Models** project:
 
    CodeCopy
 
    ```
    using AdventureWorks.Models;
+   ```
+
+5. Add the following lines of code to import the **Microsoft.Azure.Cosmos** and **Microsoft.Azure.Cosmos.Linq** namespaces from the **Microsoft.Azure.Cosmos** package imported from NuGet:
+
+   CodeCopy
+
+   ```
    using Microsoft.Azure.Cosmos;
    using Microsoft.Azure.Cosmos.Linq;
+   ```
+
+6. Add the following lines of code to add **using** directives for the built-in namespaces that will be used in this file:
+
+   CodeCopy
+
+   ```
    using System;
    using System.Collections.Generic;
    using System.Linq;
    using System.Threading.Tasks;
    ```
 
-3. Enter the following code to add an **AdventureWorks.Context** namespace block:
+7. Enter the following code to add an **AdventureWorks.Context** namespace block:
 
    CodeCopy
 
@@ -579,102 +902,149 @@ In this exercise, you used Entity Framework and the .NET SDK for Azure Cosmos DB
    }
    ```
 
-4. Create a new **AdventureWorksCosmosContext** class that implements the **IAdventureWorksProductContext** interface with a single read-only *Container* variable:
+8. Within the **AdventureWorks.Context** namespace, enter the following code to create a new **AdventureWorksCosmosContext** class:
+
+   CodeCopy
+
+   ```
+   public class AdventureWorksCosmosContext
+   {
+   }
+   ```
+
+9. Update the declaration of the **AdventureWorksCosmosContext** class by adding a specification indicating that this class will implement the **IAdventureWorksProductContext** interface:
 
    CodeCopy
 
    ```
    public class AdventureWorksCosmosContext : IAdventureWorksProductContext
    {
-       private readonly Container _container;
    }
    ```
 
-5. Within the **AdventureWorksCosmosContext** class, add a new constructor that creates a new instance of the **CosmosClient** class, and then obtain both a **Database** and **Container** instance from the client:
+10. Within the **AdventureWorksCosmosContext** class, enter the following line of code to create a new read-only *Container* variable named **_container**:
 
-   CodeCopy
+    CodeCopy
 
-   ```
-   public AdventureWorksCosmosContext(string connectionString, string database = "Retail", string container = "Online")
-   {
-       _container = new CosmosClient(connectionString)
-           .GetDatabase(database)
-           .GetContainer(container);
-   }
-   ```
+    ```
+    private readonly Container _container;
+    ```
 
-6. Within the **AdventureWorksCosmosContext** class, add a new **FindModelAsync** method that creates a LINQ query, transforms it into an iterator, iterates over the result set, and then returns the single item in the result set:
+11. Within the **AdventureWorksCosmosContext** class, add a new constructor with the following signature:
 
-   CodeCopy
+    CodeCopy
 
-   ```
-   public async Task<Model> FindModelAsync(Guid id)
-   {
-       var iterator = _container.GetItemLinqQueryable<Model>()
-           .Where(m => m.id == id)
-           .ToFeedIterator<Model>();
-   
-       List<Model> matches = new List<Model>();
-       while (iterator.HasMoreResults)
-       {
-           var next = await iterator.ReadNextAsync();
-           matches.AddRange(next);
-       }
-   
-       return matches.SingleOrDefault();
-   }
-   ```
+    ```
+    public AdventureWorksCosmosContext(string connectionString, string database = "Retail", string container = "Online")
+    {
+    }
+    ```
 
-7. Within the **AdventureWorksCosmosContext** class, add a new **GetModelsAsync** method that runs an SQL query, gets the query result iterator, iterates over the result set, and then returns the union of all results:
+12. Within the constructor, add the following block of code to create a new instance of the **CosmosClient** class and then obtain both a **Database** and **Container** instance from the client:
 
-   CodeCopy
+    CodeCopy
 
-   ```
-   public async Task<List<Model>> GetModelsAsync()
-   {
-       string query = $@"SELECT * FROM items";
-   
-       var iterator = _container.GetItemQueryIterator<Model>(query);
-   
-       List<Model> matches = new List<Model>();
-       while (iterator.HasMoreResults)
-       {
-           var next = await iterator.ReadNextAsync();
-           matches.AddRange(next);
-       }
-   
-       return matches;
-   }
-   ```
+    ```
+    _container = new CosmosClient(connectionString)
+        .GetDatabase(database)
+        .GetContainer(container);
+    ```
 
-8. Within the **AdventureWorksCosmosContext** class, add a new **FindProductAsync** method that runs an SQL query, gets the query result iterator, iterates over the result set, and then returns the single item in the result set:
+13. Within the **AdventureWorksCosmosContext** class, add a new **FindModelAsync** method with the following signature:
 
-   CodeCopy
+    CodeCopy
 
-   ```
-   public async Task<Product> FindProductAsync(Guid id)
-   {
-       string query = $@"SELECT VALUE products
-                           FROM models
-                           JOIN products in models.Products
-                           WHERE products.id = '{id}'";
-   
-       var iterator = _container.GetItemQueryIterator<Product>(query);
-   
-       List<Product> matches = new List<Product>();
-       while (iterator.HasMoreResults)
-       {
-           var next = await iterator.ReadNextAsync();
-           matches.AddRange(next);
-       }
-   
-       return matches.SingleOrDefault();
-   }
-   ```
+    ```
+    public async Task<Model> FindModelAsync(Guid id)
+    {
+    }
+    ```
 
-9. Save the **AdventureWorksCosmosContext.cs** file.
+14. Within the **FindModelAsync** method, add the following blocks of code to create a LINQ query, transform it into an iterator, iterate over the result set, and then return the single item in the result set:
 
-10. Using a terminal, change your context to the **AdventureWorks.Context** folder:
+    CodeCopy
+
+    ```
+    var iterator = _container.GetItemLinqQueryable<Model>()
+        .Where(m => m.id == id)
+        .ToFeedIterator<Model>();
+    
+    List<Model> matches = new List<Model>();
+    while (iterator.HasMoreResults)
+    {
+        var next = await iterator.ReadNextAsync();
+        matches.AddRange(next);
+    }
+    
+    return matches.SingleOrDefault();
+    ```
+
+15. Within the **AdventureWorksCosmosContext** class, add a new **GetModelsAsync** method with the following signature:
+
+    CodeCopy
+
+    ```
+    public async Task<List<Model>> GetModelsAsync()
+    {
+    }
+    ```
+
+16. Within the **GetModelsAsync** method, add the following blocks of code to run an SQL query, get the query result iterator, iterate over the result set, and then return the union of all results:
+
+    CodeCopy
+
+    ```
+    string query = $@"SELECT * FROM items";
+    
+    var iterator = _container.GetItemQueryIterator<Model>(query);
+    
+    List<Model> matches = new List<Model>();
+    while (iterator.HasMoreResults)
+    {
+        var next = await iterator.ReadNextAsync();
+        matches.AddRange(next);
+    }
+    
+    return matches;
+    ```
+
+17. Within the **AdventureWorksCosmosContext** class, add a new **FindProductAsync** method with the following signature:
+
+    CodeCopy
+
+    ```
+    public async Task<Product> FindProductAsync(Guid id)
+    {
+    }
+    ```
+
+18. Within the **FindProductAsync** method, add the following blocks of code to run an SQL query, get the query result iterator, iterate over the result set, and then return the single item in the result set:
+
+    CodeCopy
+
+    ```
+    string query = $@"SELECT VALUE products
+                        FROM models
+                        JOIN products in models.Products
+                        WHERE products.id = '{id}'";
+    
+    var iterator = _container.GetItemQueryIterator<Product>(query);
+    
+    List<Product> matches = new List<Product>();
+    while (iterator.HasMoreResults)
+    {
+        var next = await iterator.ReadNextAsync();
+        matches.AddRange(next);
+    }
+    
+    return matches.SingleOrDefault();
+    ```
+
+19. Save the **AdventureWorksCosmosContext.cs** file.
+
+20. In the **Visual Studio Code** window, access the shortcut menu or right-click or activate the shortcut menu for the Explorer pane, and then select **Open in Terminal**.
+
+21. At the open command prompt, enter the following command, and then select Enter to switch your terminal context to the **AdventureWorks.Context** folder:
 
     CodeCopy
 
@@ -682,7 +1052,7 @@ In this exercise, you used Entity Framework and the .NET SDK for Azure Cosmos DB
     cd .\AdventureWorks.Context\
     ```
 
-11. Using the same terminal, build the ASP.NET web application project:
+22. At the command prompt, enter the following command, and then select Enter to build the .NET web application:
 
     CodeCopy
 
@@ -692,42 +1062,82 @@ In this exercise, you used Entity Framework and the .NET SDK for Azure Cosmos DB
 
     > **Note**: If there are any build errors, review the **AdventureWorksCosmosContext.cs** file in the **Allfiles (F):\Allfiles\Labs\04\Solution\AdventureWorks\AdventureWorks.Context** folder.
 
-12. Close the current terminal.
+23. Select **Kill Terminal** or the **Recycle Bin** icon to close the currently open terminal and any associated processes.
 
 #### Task 3: Update the Azure Cosmos DB connection string
 
-1. Open the **AdventureWorks.Web/appsettings.json** file in Visual Studio Code.
-2. Replace the value of the *ConnectionStrings.AdventureWorksCosmosContext* property with the **PRIMARY CONNECTION STRING** of the Azure Cosmos DB account that you recorded earlier in this lab.
-3. Save the **appsettings.json** file.
+1. In the Explorer pane of the **Visual Studio Code** window, expand the **AdventureWorks.Web** project.
+
+2. Open the **appsettings.json** file.
+
+3. In the JSON object on line 4, find the **ConnectionStrings.AdventureWorksCosmosContext** path. Observe that the current value is empty:
+
+   CodeCopy
+
+   ```
+   "ConnectionStrings": {
+       ...
+       "AdventureWorksCosmosContext": "",
+       ...
+   },
+   ```
+
+4. Update the value of the **AdventureWorksCosmosContext** property by setting its value to the **PRIMARY CONNECTION STRING** of the Azure Cosmos DB account that you recorded earlier in this lab.
+
+5. Save the **appsettings.json** file.
 
 #### Task 4: Update .NET application startup logic
 
-1. Open the **AdventureWorks.Web/Startup.cs** file in Visual Studio Code.
+1. In the Explorer pane of the **Visual Studio Code** window, expand the **AdventureWorks.Web** project.
 
-2. In the **Startup** class, find the existing **ConfigureProductService** method.
+2. Open the **Startup.cs** file.
 
-   > **Note**: The current product service uses SQL as its database.
-
-3. Replace the **ConfigureProductService** method with the following code:
+3. In the **Startup** class, find the existing **ConfigureProductService** method:
 
    CodeCopy
 
    ```
    public void ConfigureProductService(IServiceCollection services)
    {
-       services.AddScoped<IAdventureWorksProductContext, AdventureWorksCosmosContext>(provider =>
-               new AdventureWorksCosmosContext(
-                   _configuration.GetConnectionString(nameof(AdventureWorksCosmosContext))
-               )
+       services.AddScoped<IAdventureWorksProductContext, AdventureWorksSqlContext>(provider =>
+           new AdventureWorksSqlContext(
+               _configuration.GetConnectionString(nameof(AdventureWorksSqlContext))
+           )
        );
    }
    ```
 
-4. Save the **Startup.cs** file.
+   > **Note**: The current product service uses SQL as its database.
+
+4. Within the **ConfigureProductService** method, delete all existing lines of code:
+
+   CodeCopy
+
+   ```
+   public void ConfigureProductService(IServiceCollection services)
+   {
+   }
+   ```
+
+5. Within the **ConfigureProductService** method, add the following block of code to change the products provider to the **AdventureWorksCosmosContext** implementation that you created earlier in this lab:
+
+   CodeCopy
+
+   ```
+   services.AddScoped<IAdventureWorksProductContext, AdventureWorksCosmosContext>(provider =>
+       new AdventureWorksCosmosContext(
+           _configuration.GetConnectionString(nameof(AdventureWorksCosmosContext))
+       )
+   );
+   ```
+
+6. Save the **Startup.cs** file.
 
 #### Task 5: Validate that the .NET application successfully connects to Azure Cosmos DB
 
-1. Using a terminal, change your context to the **AdventureWorks.Web** folder:
+1. In the **Visual Studio Code** window, access the shortcut menu or right-click or activate the shortcut menu for the Explorer pane, and then select **Open in Terminal**.
+
+2. At the open command prompt, enter the following command, and then select Enter to switch your terminal context to the **AdventureWorks.Web** folder:
 
    CodeCopy
 
@@ -735,7 +1145,7 @@ In this exercise, you used Entity Framework and the .NET SDK for Azure Cosmos DB
    cd .\AdventureWorks.Web\
    ```
 
-2. Using the same terminal, run the ASP.NET web application project:
+3. At the command prompt, enter the following command, and then select Enter to run the ASP.NET web application:
 
    CodeCopy
 
@@ -745,26 +1155,22 @@ In this exercise, you used Entity Framework and the .NET SDK for Azure Cosmos DB
 
    > **Note**: The **dotnet run** command will automatically build any changes to the project and then start the web application without a debugger attached. The command will output the URL of the running application and any assigned ports.
 
-3. Open the Microsoft Edge browser.
+4. On the taskbar, select the **Microsoft Edge** icon.
 
-4. In the open browser window, browse to the web application that’s hosted at **localhost** on port **5000**.
+5. In the open browser window, browse to the currently running web application ([http://localhost:5000](http://localhost:5000/)).
 
-   > **Note**: The URL is [http://localhost:5000](http://localhost:5000/).
+6. In the web application, observe the list of models displayed from the front page.
 
-5. In the web application, observe the list of models displayed from the front page.
+7. Find the **Touring-1000** model, and then select **View Details**.
 
-6. Find the **Touring-1000** model, and then select **View Details**.
-
-7. From the **Touring-1000** product detail page, perform the following actions:
+8. From the **Touring-1000** product detail page, perform the following actions:
 
    1. In the **Select options** list, select **Touring-1000 Yellow, 50, $2,384.07**.
-   2. Find **Add to Cart**.
+   2. Find **Add to Cart**, and then observe that the checkout functionality is still disabled.
 
-8. Close the browser window displaying your web application.
+9. Close the browser window displaying your web application.
 
-9. Return to the **Visual Studio Code** window.
-
-10. Close the current terminal.
+10. Return to the **Visual Studio Code** window, and then select **Kill Terminal** or the **Recycle Bin** icon to close the currently open terminal and any associated processes.
 
 #### Review
 
@@ -775,11 +1181,18 @@ In this exercise, you wrote C# code to query an Azure Cosmos DB collection by us
 #### Task 1: Open Azure Cloud Shell
 
 1. In the Azure portal, select the **Cloud Shell** icon to open a new shell instance.
-2. If **Cloud Shell** isn’t already configured, configure the shell for **Bash** by using the default settings.
+
+   > **Note**: The **Cloud Shell** icon is represented by a greater than sign (>) and underscore character (_).
+
+2. If this is your first time opening Cloud Shell using your subscription, you can use the **Welcome to Azure Cloud Shell Wizard** to configure Cloud Shell for first-time usage. Perform the following actions in the wizard:
+
+   1. A dialog box prompts you to configure the shell. Select **Bash**, review the selected subscription, and then select **Create storage**.
+
+   > **Note**: Wait for the Cloud Shell to finish its initial setup procedures before moving forward with the lab.If you don’t notice the Cloud Shell configuration options, this is most likely because you’re using an existing subscription with this course’s labs. The labs are written with the presumption that you’re using a new subscription.
 
 #### Task 2: Delete resource groups
 
-1. Enter the following command, and then select Enter to delete the **PolyglotData** resource group:
+1. At the command prompt, enter the following command, and then select Enter to delete the **PolyglotData** resource group:
 
    CodeCopy
 
