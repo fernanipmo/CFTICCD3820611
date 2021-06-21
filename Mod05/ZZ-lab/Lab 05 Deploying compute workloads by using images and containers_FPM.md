@@ -28,6 +28,12 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 - Microsoft Edge
 - File Explorer
 
+
+
+**Architecture**
+
+![LAB05-Az204_00_Architecture](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_00_Architecture.png)
+
 ### Exercise 1: Create a VM by using the Azure Command-Line Interface (CLI)
 
 #### Task 1: Open the Azure portal
@@ -54,11 +60,15 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 4. From the **Marketplace** search results blade, select the **Resource group** result.
 
+   ![LAB05-Az204_01](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_01.png)
+
 5. From the **Resource group** blade, select **Create**.
 
 6. From the additional **Resource group** blade, find the tabs from the blade, such as **Basics**.
 
    > **Note**: Each tab represents a step in the workflow to create a new resource group. You can select **Review + Create** at any time to skip the remaining tabs.
+
+   ![LAB05-Az204_02](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_02.png)
 
 7. From the **Basics** tab, perform the following actions:
 
@@ -69,9 +79,13 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 8. From the **Review + Create** tab, review the options that you selected during the previous steps.
 
+   ![LAB05-Az204_03](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_03.png)
+
 9. Select **Create** to create the resource group by using your specified configuration.
 
    > **Note**: Wait for the creation task to complete before moving forward with this lab.
+
+![LAB05-Az204_04](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_04.png)
 
 #### Task 3: Open Azure Cloud Shell
 
@@ -85,6 +99,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
    > **Note**: Wait for Cloud Shell to finish its initial setup procedures before moving forward with the lab. If you don’t notice the **Cloud Shell** configuration options, this is most likely because you’re using an existing subscription with this course’s labs. The labs are written with the presumption that you’re using a new subscription.
 
+   ![LAB05-Az204_05](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_05.png)
+
 3. At the **Cloud Shell** command prompt in the portal, enter the following command, and then select Enter to get the version of the Azure CLI tool:
 
    CodeCopy
@@ -92,6 +108,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
    ```
    az --version
    ```
+
+![LAB05-Az204_06](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_06.png)
 
 #### Task 4: Use the Azure CLI commands
 
@@ -103,6 +121,10 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
    az --help
    ```
 
+   ![LAB05-Az204_07](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_07.png)
+
+   ![LAB05-Az204_07a](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_07a.png)
+
 2. Enter the following command, and then select Enter to get a list of subgroups and commands for Azure Virtual Machines:
 
    CodeCopy
@@ -111,6 +133,10 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
    az vm --help
    ```
 
+   ![LAB05-Az204_08](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_08.png)
+
+   ![LAB05-Az204_08a](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_08a.png)
+
 3. Enter the following command, and then select Enter to get a list of arguments and examples for the **Create Virtual Machine** command:
 
    CodeCopy
@@ -118,6 +144,12 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
    ```
    az vm create --help
    ```
+
+   ![LAB05-Az204_09](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_09.png)
+
+   
+
+   ![LAB05-Az204_09a](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_09a.png)
 
 4. Enter the following command, and then select Enter to create a new **virtual machine** with the following settings:
 
@@ -135,6 +167,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
    > **Note**: Wait for the VM creation process to complete. After the process completes, the command will return a JSON file containing details about the machine.
 
+   ![LAB05-Az204_10](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_10.png)
+
 5. Enter the following command, and then select Enter to get a more detailed JavaScript Object Notation (JSON) file that contains various metadata about the newly created VM:
 
    CodeCopy
@@ -142,6 +176,12 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
    ```
    az vm show --resource-group ContainerCompute --name quickvm
    ```
+
+   ![LAB05-Az204_11](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_11.png)
+
+   ![LAB05-Az204_12](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_12.png)
+
+   ![LAB05-Az204_15](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_15.png)
 
 6. Enter the following command, and then select Enter to list all the IP addresses associated with the VM:
 
@@ -151,6 +191,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
    az vm list-ip-addresses --resource-group ContainerCompute --name quickvm
    ```
 
+   ![LAB05-Az204_13](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_13.png)
+
 7. Enter the following command, and then select Enter to filter the output to only return the first IP address value:
 
    CodeCopy
@@ -158,6 +200,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
    ```
    az vm list-ip-addresses --resource-group ContainerCompute --name quickvm --query '[].{ip:virtualMachine.network.publicIpAddresses[0].ipAddress}' --output tsv
    ```
+
+   ![LAB05-Az204_14](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_14.png)
 
 8. Enter the following command, and then select Enter to store the results of the previous command in a new Bash shell variable named *ipAddress*:
 
@@ -167,6 +211,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
    ipAddress=$(az vm list-ip-addresses --resource-group ContainerCompute --name quickvm --query '[].{ip:virtualMachine.network.publicIpAddresses[0].ipAddress}' --output tsv)
    ```
 
+   ![LAB05-Az204_16](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_16.png)
+
 9. Enter the following command, and then select Enter to render the value of the Bash shell variable *ipAddress*:
 
    CodeCopy
@@ -174,6 +220,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
    ```
    echo $ipAddress
    ```
+
+   ![LAB05-Az204_17](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_17.png)
 
 10. Enter the following command, and then select Enter to connect to the VM that you created earlier in this lab by using the Secure Shell (SSH) tool and the IP address stored in the Bash shell variable *ipAddress*:
 
@@ -183,7 +231,9 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     ssh student@$ipAddress
     ```
 
-11. The SSH tool will first inform you that the authenticity of the host can’t be established and then ask if you want to continue connecting. Enter **yes**, and then select Enter to continue connecting to the VM.
+    
+
+11. The SSH tool wi![LAB05-Az204_17_](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_17_.png)ll first inform you that the authenticity of the host can’t be established and then ask if you want to continue connecting. Enter **yes**, and then select Enter to continue connecting to the VM.
 
 12. The SSH tool will then ask you for a password. Enter **StudentPa55w.rd**, and then select Enter to authenticate with the VM.
 
@@ -195,6 +245,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     uname -a
     ```
 
+    ![LAB05-Az204_18b](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_18b.png)
+
 14. Use the **exit** command to end your SSH session:
 
     CodeCopy
@@ -202,6 +254,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     ```
     exit
     ```
+
+    ![LAB05-Az204_18c](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_18c.png)
 
 15. Close the Cloud Shell pane in the portal.
 
@@ -225,6 +279,8 @@ In this exercise, you used Cloud Shell to create a VM as part of an automated sc
    cd ~/clouddrive
    ```
 
+   ![LAB05-Az204_19](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_19.png)
+
 3. Enter the following command, and then select Enter to create a new directory named **ipcheck** in the **~/clouddrive** directory:
 
    CodeCopy
@@ -232,6 +288,8 @@ In this exercise, you used Cloud Shell to create a VM as part of an automated sc
    ```
    mkdir ipcheck
    ```
+
+   ![LAB05-Az204_20](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_20.png)
 
 4. Enter the following command, and then select Enter to change the active directory from **~/clouddrive** to **~/clouddrive/ipcheck**:
 
@@ -241,6 +299,8 @@ In this exercise, you used Cloud Shell to create a VM as part of an automated sc
    cd ~/clouddrive/ipcheck
    ```
 
+   ![LAB05-Az204_21](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_21.png)
+
 5. Enter the following command, and then select Enter to create a new .NET console application in the current directory:
 
    CodeCopy
@@ -248,6 +308,8 @@ In this exercise, you used Cloud Shell to create a VM as part of an automated sc
    ```
    dotnet new console --output . --name ipcheck
    ```
+
+   ![LAB05-Az204_22](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_22.png)
 
 6. Enter the following command, and then select Enter to create a new file in the **~/clouddrive/ipcheck** directory named **Dockerfile**:
 
@@ -257,6 +319,8 @@ In this exercise, you used Cloud Shell to create a VM as part of an automated sc
    touch Dockerfile
    ```
 
+   ![LAB05-Az204_23](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_23.png)
+
 7. Enter the following command, and then select Enter to open the embedded graphical editor in the context of the current directory:
 
    CodeCopy
@@ -265,11 +329,19 @@ In this exercise, you used Cloud Shell to create a VM as part of an automated sc
    code .
    ```
 
+![LAB05-Az204_24](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_24.png)
+
 #### Task 2: Create and test a .NET application
 
 1. In the graphical editor, find the FILES pane, and then open the **Program.cs** file to open it in the editor.
 
+   ![LAB05-Az204_25](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_25.png)
+
 2. Delete the entire contents of the **Program.cs** file.
+
+   ![LAB05-Az204_25a](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_25a.png)
+
+   ![LAB05-Az204_25b](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_25b.png)
 
 3. Copy and paste the following code into the **Program.cs** file:
 
@@ -279,7 +351,11 @@ In this exercise, you used Cloud Shell to create a VM as part of an automated sc
    public class Program{    public static void Main(string[] args)    {                // Check if network is available        if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())        {            System.Console.WriteLine("Current IP Addresses:");            // Get host entry for current hostname            string hostname = System.Net.Dns.GetHostName();            System.Net.IPHostEntry host = System.Net.Dns.GetHostEntry(hostname);                            // Iterate over each IP address and render their values            foreach(System.Net.IPAddress address in host.AddressList)            {                System.Console.WriteLine($"\t{address}");            }        }        else        {            System.Console.WriteLine("No Network Connection");        }    }}
    ```
 
+   ![LAB05-Az204_25c](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_25c.png)
+
 4. Save the **Program.cs** file by using the menu in the graphical editor or the Ctrl+S keyboard shortcut. Don’t close the graphical editor.
+
+   ![LAB05-Az204_25d](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_25d.png)
 
 5. Back at the command prompt, enter the following command, and then select Enter to run the application:
 
@@ -289,9 +365,15 @@ In this exercise, you used Cloud Shell to create a VM as part of an automated sc
    dotnet run
    ```
 
+   ![LAB05-Az204_26a](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_26a.png)
+
 6. Find the results of the run. At least one IP address should be listed for the Cloud Shell instance.
 
+   ![LAB05-Az204_26b](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_26b.png)
+
 7. In the graphical editor, find the FILES pane of the editor, and then open the **Dockerfile** file to open it in the editor.
+
+   ![LAB05-Az204_27](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_27.png)
 
 8. Copy and paste the following code into the **Dockerfile** file:
 
@@ -301,7 +383,11 @@ In this exercise, you used Cloud Shell to create a VM as part of an automated sc
    # Start using the .NET Core 3.1 SDK container imageFROM mcr.microsoft.com/dotnet/sdk:3.1-alpine AS build# Change current working directoryWORKDIR /app# Copy existing files from host machineCOPY . ./# Publish application to the "out" folderRUN dotnet publish --configuration Release --output out# Start container by running application DLLENTRYPOINT ["dotnet", "out/ipcheck.dll"]
    ```
 
+   ![LAB05-Az204_27a](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_27a.png)
+
 9. Save the **Dockerfile** file by using the menu in the graphical editor or by using the Ctrl+S keyboard shortcut.
+
+   ![LAB05-Az204_27b](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_27b.png)
 
 10. Close the Cloud Shell pane in the portal.
 
@@ -317,6 +403,8 @@ In this exercise, you used Cloud Shell to create a VM as part of an automated sc
 
 5. From the **Container Registry** blade, select **Create**.
 
+   ![LAB05-Az204_28](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_28.png)
+
 6. From the **Create container registry** blade, perform the following actions:
 
    1. In the **Registry name** text box, give your registry a globally unique name.
@@ -331,9 +419,17 @@ In this exercise, you used Cloud Shell to create a VM as part of an automated sc
 
    5. In the **SKU** drop-down list, select **Basic**.
 
+      ![LAB05-Az204_29](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_29.png)
+
    6. Select **Create**.
 
    > **Note**: Wait for the creation task to complete before moving forward with this lab.
+
+![LAB05-Az204_30](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_30.png)
+
+![LAB05-Az204_31](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_31.png)
+
+![LAB05-Az204_32](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_32.png)
 
 #### Task 4: Open Azure Cloud Shell and store Container Registry metadata
 
@@ -349,6 +445,10 @@ In this exercise, you used Cloud Shell to create a VM as part of an automated sc
    az acr list
    ```
 
+   ![LAB05-Az204_33](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_33.png)
+
+   ![LAB05-Az204_33a](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_33a.png)
+
 3. Enter the following command, and then select Enter:
 
    CodeCopy
@@ -356,6 +456,8 @@ In this exercise, you used Cloud Shell to create a VM as part of an automated sc
    ```
    az acr list --query "max_by([], &creationDate).name" --output tsv
    ```
+
+   ![LAB05-Az204_34](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_34.png)
 
 4. Enter the following command, and then select Enter:
 
@@ -365,6 +467,8 @@ In this exercise, you used Cloud Shell to create a VM as part of an automated sc
    acrName=$(az acr list --query "max_by([], &creationDate).name" --output tsv)
    ```
 
+   ![LAB05-Az204_35](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_35.png)
+
 5. Enter the following command, and then select Enter:
 
    CodeCopy
@@ -372,6 +476,8 @@ In this exercise, you used Cloud Shell to create a VM as part of an automated sc
    ```
    echo $acrName
    ```
+
+![LAB05-Az204_36](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_36.png)
 
 #### Task 5: Deploy a Docker container image to Container Registry
 
@@ -383,6 +489,8 @@ In this exercise, you used Cloud Shell to create a VM as part of an automated sc
    cd ~/clouddrive/ipcheck
    ```
 
+   ![LAB05-Az204_37](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_37.png)
+
 2. Enter the following command, and then select Enter to get the contents of the current directory:
 
    CodeCopy
@@ -390,6 +498,8 @@ In this exercise, you used Cloud Shell to create a VM as part of an automated sc
    ```
    dir
    ```
+
+   ![LAB05-Az204_38](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_38.png)
 
 3. Enter the following command, and then select Enter to upload the source code to your container registry and build the container image as a Container Registry task:
 
@@ -400,6 +510,12 @@ In this exercise, you used Cloud Shell to create a VM as part of an automated sc
    ```
 
    > **Note**: Wait for the build task to complete before moving forward with this lab.
+
+   ![LAB05-Az204_39a](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_39a.png)
+
+   ![LAB05-Az204_39b](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_39b.png)
+
+   ![LAB05-Az204_39c](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_39c.png)
 
 4. Close the Cloud Shell pane in the portal.
 
@@ -413,13 +529,29 @@ In this exercise, you used Cloud Shell to create a VM as part of an automated sc
 
 4. From the **Container Registry** blade, find the **Services** section, and then select the **Repositories** link.
 
+   ![LAB05-Az204_40](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_40.png)
+
 5. In the **Repositories** section, select the **ipcheck** container image repository.
 
+   ![LAB05-Az204_41](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_41.png)
+
 6. From the **Repository** blade, select the **latest** tag.
+
+   ![LAB05-Az204_42](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_42.png)
 
 7. Find the metadata for the version of your container image with the **latest** tag.
 
    > **Note**: You can also select the **Run ID** link to find metadata about the build task.
+
+![LAB05-Az204_43](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_43.png)
+
+![LAB05-Az204_43b](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_43b.png)
+
+![LAB05-Az204_44a](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_44a.png)
+
+![LAB05-Az204_44b](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_44b.png)
+
+![LAB05-Az204_44c](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_44c.png)
 
 #### Review
 
@@ -430,13 +562,32 @@ In this exercise, you created a .NET console application to display a machine’
 #### Task 1: Enable the admin user in Container Registry
 
 1. In the Azure portal’s navigation pane, select the **Resource groups** link.
+
 2. From the **Resource groups** blade, find and then select the **ContainerCompute** resource group that you created earlier in this lab.
+
 3. From the **ContainerCompute** blade, select the container registry that you created earlier in this lab.
+
+   ![LAB05-Az204_45](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_45.png)
+
 4. From the **Container Registry** blade, select **Update**.
+
+   ![LAB05-Az204_46](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_46.png)
+
 5. From the **Update container registry** blade, perform the following actions:
    1. In the **Admin user** section, select **Enable**.
-   2. Select **Save**.
-   3. Close the blade.
+
+   2. 
+
+      ![LAB05-Az204_47](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_47.png)
+
+   3. Select **Save**.
+
+      ![LAB05-Az204_48](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_48.png)
+
+   4. Close the blade.
+
+      ![LAB05-Az204_48b](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_48b.png)
+
 6. Close the **Update container registry** blade.
 
 #### Task 2: Automatically deploy a container image to an Azure container instance
@@ -445,9 +596,15 @@ In this exercise, you created a .NET console application to display a machine’
 
 2. In the **Repositories** section, select the **ipcheck** container image repository.
 
+   ![LAB05-Az204_49](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_49.png)
+
 3. From the **Repository** blade, select the ellipsis menu associated with the **latest** tag entry.
 
+   ![LAB05-Az204_50](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_50.png)
+
 4. In the pop-up menu, select the **Run instance** link.
+
+   ![LAB05-Az204_51](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_51.png)
 
 5. From the **Create container instance** blade, perform the following actions:
 
@@ -464,6 +621,8 @@ In this exercise, you created a .NET console application to display a machine’
 
    > **Note**: Wait for the creation task to complete before moving forward with this lab.
 
+![LAB05-Az204_52b](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_52b.png)
+
 #### Task 3: Manually deploy a container image to Container Instances
 
 1. In the Azure portal’s navigation pane, select the **Create a resource** link.
@@ -474,7 +633,11 @@ In this exercise, you created a .NET console application to display a machine’
 
 4. From the **Marketplace** search results blade, select the **Container Instances** result.
 
+   ![LAB05-Az204_53](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_53.png)
+
 5. From the **Container Instances** blade, select **Create**.
+
+   ![LAB05-Az204_54](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_54.png)
 
 6. Find the tabs from the **Create Container Instances** blade, such as **Basics**, **Networking**, and **Advanced**.
 
@@ -483,28 +646,53 @@ In this exercise, you created a .NET console application to display a machine’
 7. From the **Basics** tab, perform the following actions:
 
    1. Leave the **Subscription** text box set to its default value.
+
    2. In the **Resource group** drop-down list, select **ContainerCompute**.
+
    3. In the **Container name** text box, enter **manualcompute**.
+
    4. In the **Region** drop-down list, select **(US) East US**.
+
    5. In the **Image source** section, select **Azure Container Registry**.
+
    6. In the **Registry** drop-down list, select the **Azure Container Registry** resource that you created earlier in this lab.
+
    7. In the **Image** drop-down list, select **ipcheck**.
+
    8. In the **Image tag** drop-down list, select **latest**.
+
    9. Select **Review + Create**.
 
+      ![LAB05-Az204_55](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_55.png)
+
 8. From the **Review + Create** tab, review the selected options.
+
+   ![LAB05-Az204_56](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_56.png)
 
 9. Select **Create** to create the container instance by using your specified configuration.
 
    > **Note**: Wait for the creation task to complete before moving forward with this lab.
 
+![LAB05-Az204_57](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_57.png)
+
+![LAB05-Az204_58](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_58.png)
+
 #### Task 4: Validate that the container instance ran successfully
 
 1. In the Azure portal’s navigation pane, select the **Resource groups** link.
+
 2. From the **Resource groups** blade, find and then select the **ContainerCompute** resource group that you created earlier in this lab.
+
 3. From the **ContainerCompute** blade, select the **manualcompute** container instance that you created earlier in this lab.
+
+   ![LAB05-Az204_59a](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_59a.png)
+
 4. From the **Container Instance** blade, find the **Settings** section, and then select the **Containers** link.
+
+   ![LAB05-Az204_59b](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_59b.png)
+
 5. In the **Containers** section, find the list of **Events**.
+
 6. Select the **Logs** tab, and then find the text logs from the container instance.
 
 > **Note**: You can also optionally find the **Events** and **Logs** from the **managedcompute** container instance.
@@ -538,6 +726,10 @@ In this exercise, you used multiple methods to deploy a container image to an Az
    ```
    az group delete --name ContainerCompute --no-wait --yes
    ```
+
+   ![LAB05-Az204_60](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_60.png)
+
+   ![LAB05-Az204_61](C:\CFTICCD3820611\Mod05\ZZ-lab\Evidencia\LAB05-Az204_61.png)
 
 2. Close the Cloud Shell pane in the portal.
 
