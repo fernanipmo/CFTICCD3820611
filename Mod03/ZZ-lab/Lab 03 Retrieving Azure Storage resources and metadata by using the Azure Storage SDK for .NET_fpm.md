@@ -26,6 +26,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 - Microsoft Edge
 - File Explorer
 
+
+
 **Architecture**
 
 ![LAB03_Az204_00_Architecture](Evidencia/LAB03_Az204_00_Architecture.png)

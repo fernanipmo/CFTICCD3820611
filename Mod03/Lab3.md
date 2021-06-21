@@ -28,6 +28,8 @@ https://mediastorfpm.blob.core.windows.net/
 https://mediastorfpm.blob.core.windows.net/vector-graphics/graph.svg
 ````
 
+
+
 https://mediastorfpm.blob.core.windows.net/vector-graphics/graph.svg
 
 **Resource group**
