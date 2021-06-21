@@ -31,6 +31,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 ![LAB04-Az204_00_Architecture](Evidencia/LAB04-Az204_00_Architecture.png)
 
+
+
 ### Exercise 1: Creating database resources in Azure
 
 #### Task 1: Open the Azure portal
