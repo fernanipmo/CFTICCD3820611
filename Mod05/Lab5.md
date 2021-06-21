@@ -4,8 +4,6 @@
 dotnet new console --name ipcheck . --framework netcoreapp3.1
 ```
 
-
-
 Type "az" to use Azure CLI
 Type "help" to learn about Cloud Shell
 
@@ -767,6 +765,8 @@ az acr build --registry $acrName --image ipcheck:latest .
 
 docker pull containerfpm.azurecr.io/ipcheck:latest
 
+
+
 1. In the **Container name** text box, enter **managedcompute**.
 2. Leave the **Container image** text box set to its default value.
 3. In the **OS type** section, select **Linux**.
@@ -796,6 +796,11 @@ docker pull containerfpm.azurecr.io/ipcheck:latest
 
 3. Select **Create** to create the container instance by using your specified configuration.
 
-   > 
+   
+   
+   **Delete Resource Group**
 
+``````
 az group delete --name ContainerCompute --no-wait --yes
+``````
+
