@@ -26,9 +26,10 @@ Sign in to your Windows 10 virtual machine (VM) by using the following credentia
 Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for the applications that you’ll use in this lab:
 
 - Microsoft Edge
+
 - File Explorer
 
-
+  
 
 **Architecture**
 
