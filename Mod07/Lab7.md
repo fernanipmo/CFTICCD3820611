@@ -3,7 +3,7 @@
 **Access Keys\Connection string**
 
 ```
-
+DefaultEndpointsProtocol=https;AccountName=securestorfpm;AccountKey=2e/S3UfORNPqze/WUHKRaHpKuIgOix/f4k5BWEayUAu5msSBihJGx6k4AGBf+YHtvDf2anHwaHBh/H5ZhUnT2w==;EndpointSuffix=core.windows.net
 ```
 
 **securevault[yourname]\secrets\storagecredentials\Current version**
@@ -11,10 +11,14 @@
 **Secret identifier**
 
 ```
-
+DefaultEndpointsProtocol=https;AccountName=securestorfpm;AccountKey=2e/S3UfORNPqze/WUHKRaHpKuIgOix/f4k5BWEayUAu5msSBihJGx6k4AGBf+YHtvDf2anHwaHBh/H5ZhUnT2w==;EndpointSuffix=core.windows.net
 ```
 
+```
+@Microsoft.KeyVault(SecretUri=DefaultEndpointsProtocol=https;AccountName=securestorfpm;AccountKey=2e/S3UfORNPqze/WUHKRaHpKuIgOix/f4k5BWEayUAu5msSBihJGx6k4AGBf+YHtvDf2anHwaHBh/H5ZhUnT2w==;EndpointSuffix=core.windows.net)
+```
 
+> 
 
 **securefunc[yourname]\Settings\Configuration**
 
