@@ -25,6 +25,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 - Microsoft Edge
 
+![LAB05_Az204_Architecture_00](Evidencia/LAB05_Az204_00_Architecture.png)
+
 ### Exercise 1: Creating an Azure App Service resource by using a Docker container image
 
 #### Task 1: Open the Azure portal
@@ -51,6 +53,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 5. From the **Web App** blade, select **Create**.
 
+   ![LAB05_Az204_01](Evidencia/LAB05_Az204_01.png)
+
 6. From the **Create Web App** blade, find the tabs from the blade, such as **Basics**.
 
    > **Note**: Each tab represents a step in the workflow to create a new web app. You can select **Review + Create** at any time to skip the remaining tabs.
@@ -58,14 +62,24 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 7. From the **Basics** tab, perform the following actions:
 
    1. Leave the **Subscription** text box set to its default value.
+
    2. In the **Resource group** section, select **Create new**, enter **ApiService**, and then select **OK**.
+
    3. In the **Name** text box, enter **httpapi\*[yourname]\***.
+
    4. In the **Publish** section, select **Docker Container**.
+
    5. In the **Operating System** section, select **Linux**.
+
    6. In the **Region** drop-down list, select the **East US** region.
+
    7. In the **Linux Plan (East US)** section, select **Create new**, enter the value **ApiPlan** in the **Name** text box, and then select **OK**.
+
    8. Leave the **SKU and size** section set to its default value.
+
    9. Select **Next: Docker**.
+
+      ![LAB05_Az204_02](Evidencia/LAB05_Az204_02.png)
 
 8. From the **Docker** tab, perform the following actions:
 
@@ -77,27 +91,60 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 9. From the **Review + Create** tab, review the options that you selected during the previous steps.
 
+   ![LAB05_Az204_03](Evidencia/LAB05_Az204_03.png)
+
 10. Select **Create** to create the web app by using your specified configuration.
 
     > **Note**: Wait for the creation task to complete before you move forward with this lab.
 
+![LAB05_Az204_05](Evidencia/LAB05_Az204_05.png)
+
+![LAB05_Az204_06](Evidencia/LAB05_Az204_06.png)
+
 #### Task 3: Test the httpbin web application
 
 1. In the Azure portal’s navigation pane, select **Resource groups**.
+
 2. From the **Resource groups** blade, select the **ApiService** resource group that you created earlier in this lab.
+
 3. From the **ApiService** blade, select the **httpapi\*[yourname]\*** web app that you created earlier in this lab.
+
+   ![LAB05_Az204_07](Evidencia/LAB05_Az204_07.png)
+
 4. From the **App Services** blade, select **Browse**.
+
+   ![LAB05_Az204_08](Evidencia/LAB05_Az204_08.png)
+
 5. Within the web application, perform the following actions:
    1. Select **Response formats**.
+
+      ![LAB05_Az204_09](Evidencia/LAB05_Az204_09.png)
+
    2. Select **GET /xml**.
+
+      ![LAB05_Az204_10](Evidencia/LAB05_Az204_10.png)
+
    3. Select **Try it out**.
+
+      ![LAB05_Az204_11](Evidencia/LAB05_Az204_11.png)
+
    4. Select **Execute**.
+
    5. Observe the value of the **Response body** and **Response headers** text boxes.
+
    6. Observe the value of the **Request URL** text box.
+
+      ![LAB05_Az204_13](Evidencia/LAB05_Az204_13.png)
+
 6. Close the browser window for the web application.
+
 7. Find the **App Services** blade for the **httpapi\*[yourname]\*** web app back in the Azure portal.
+
 8. From the **App Services** blade, in the **Settings** section, select the **Properties** link.
+
 9. In the **Properties** section, record the value of the **URL** text box. You’ll use this value later in the lab to make requests against the API.
+
+   ![LAB05_Az204_14](Evidencia/LAB05_Az204_14.png)
 
 #### Review
 
@@ -114,6 +161,8 @@ In this exercise, you created a new Azure web app by using a container image sou
 3. In the search box, enter **API**, and then select Enter.
 
 4. From the **Marketplace** search results blade, select the **API Management** result.
+
+   ![LAB05_Az204_15](Evidencia/LAB05_Az204_15.png)
 
 5. From the **API Management** blade, select **Create**.
 
@@ -139,6 +188,14 @@ In this exercise, you created a new Azure web app by using a container image sou
 
    > **Note**: Wait for the creation task to complete before you move forward with this lab.
 
+![LAB05_Az204_16](Evidencia/LAB05_Az204_16.png)
+
+![LAB05_Az204_17](Evidencia/LAB05_Az204_17.png)
+
+![LAB05_Az204_18](Evidencia/LAB05_Az204_18.png)
+
+![LAB05_Az204_19](Evidencia/LAB05_Az204_19.png)
+
 #### Task 2: Define a new API
 
 1. In the Azure portal’s navigation pane, select **Resource groups**.
@@ -147,9 +204,13 @@ In this exercise, you created a new Azure web app by using a container image sou
 
 3. From the **ApiService** blade, select the **prodapi\*[yourname]\*** API Management account that you created earlier in this lab.
 
+   ![LAB05_Az204_20](Evidencia/LAB05_Az204_20.png)
+
 4. From the **API Management Service** blade, in the **API Management** section, select **APIs** .
 
 5. In the **Add a new API** section, select **Blank API**.
+
+   ![LAB05_Az204_21](Evidencia/LAB05_Az204_21.png)
 
 6. In the **Create a blank API** window, perform the following actions:
 
@@ -167,32 +228,53 @@ In this exercise, you created a new Azure web app by using a container image sou
 
    > **Note**: Wait for the new API to finish being created.
 
+   ![LAB05_Az204_22](Evidencia/LAB05_Az204_22.png)
+
 7. From the **Design** tab, select **Add operation**.
+
+   ![LAB05_Az204_23](Evidencia/LAB05_Az204_23.png)
 
 8. In the **Add operation** section, perform the following actions:
 
    1. In the **Display name** text box, enter **Echo Headers**.
+
    2. In the **Name** text box, enter **echo-headers**.
+
    3. In the **URL** list, select **GET**.
+
    4. In the **URL** text box, enter **/**.
+
    5. Select **Save**.
+
+      ![LAB05_Az204_24](Evidencia/LAB05_Az204_24.png)
 
 9. Back from the **Design** tab, in the list of operations, select **All Operations**.
 
 10. In the **Design** section for **All Operations**, find the **Inbound processing** tile, and then select **Add policy**.
 
+    ![LAB05_Az204_25](Evidencia/LAB05_Az204_25.png)
+
 11. In the **Add inbound policy** section, select the **Set headers** tile.
+
+    ![LAB05_Az204_26](Evidencia/LAB05_Az204_26.png)
 
 12. In the **Inbound processing, Set Headers** section, perform the following actions:
 
     1. In the **Name** text box, enter **source**.
+
     2. In the **Value** text box, select the list, select **Add Value**, and then enter **azure-api-mgmt**.
+
     3. In the **Action** list, select **append**.
+
     4. Select **Save**.
+
+       ![LAB05_Az204_27](Evidencia/LAB05_Az204_27.png)
 
 13. Back from the **Design** tab, in the list of operations, select **Echo Headers**.
 
 14. In the **Design** section for **Echo Headers**, find the **Backend** tile, and then select the pencil icon.
+
+    ![LAB05_Az204_28](Evidencia/LAB05_Az204_28.png)
 
 15. In the **Backend** section, perform the following actions:
 
@@ -204,15 +286,23 @@ In this exercise, you created a new Azure web app by using a container image sou
 
     3. Select **Save**.
 
+       ![LAB05_Az204_29](Evidencia/LAB05_Az204_29.png)
+
 16. Back from the **Design** tab, in the list of operations, select **Echo Headers**.
 
 17. From the **Test** tab, select the **Echo Headers** operation.
 
+    ![LAB05_Az204_30](Evidencia/LAB05_Az204_30.png)
+
 18. In the **Echo Headers** section, select **Send**.
+
+    ![LAB05_Az204_31](Evidencia/LAB05_Az204_31.png)
 
 19. Observe the results of the API request.
 
     > **Note**: Observe how there’s many headers sent as part of your request that are echoed in the response. Specifically, you’ll notice the new **Source** header that you created as part of this task.
+
+    ![LAB05_Az204_32](Evidencia/LAB05_Az204_32.png)
 
 20. Select the **Design** tab to return to the list of operations.
 
@@ -220,29 +310,47 @@ In this exercise, you created a new Azure web app by using a container image sou
 
 1. From the **Design** tab, select **Add operation**.
 
+   ![LAB05_Az204_33](Evidencia/LAB05_Az204_33.png)
+
 2. In the **Add operation** section, perform the following actions:
 
    1. In the **Display name** text box, enter **Get Legacy Data**.
+
    2. In the **Name** text box, enter **get-legacy-data**.
+
    3. In the **URL** list, select **GET**.
+
    4. In the **URL** text box, enter **/xml**.
+
    5. Select **Save**.
+
+      ![LAB05_Az204_34](Evidencia/LAB05_Az204_34.png)
 
 3. Back from the **Design** tab, in the list of operations, select **Get Legacy Data**.
 
 4. From the **Test** tab, select the **Get Legacy Data** operation.
 
+   ![LAB05_Az204_35](Evidencia/LAB05_Az204_35.png)
+
 5. In the **Get Legacy Data** section, select **Send**.
+
+   ![LAB05_Az204_36](Evidencia/LAB05_Az204_36.png)
 
 6. Observe the results of the API request.
 
    > **Note**: At this point, the results should be in XML format.
 
+   ![LAB05_Az204_37](Evidencia/LAB05_Az204_37.png)
+
 7. Back from the **Design** tab, in the list of operations, select **Get Legacy Data**.
 
 8. In the **Design** section for the **Get Legacy Data** operation, find the **Outbound processing** tile, and then select **Add policy**.
 
+   ![LAB05_Az204_38](Evidencia/LAB05_Az204_38.png)
+
 9. In the **Add outbound policy** section, select the **Other policies** tile.
+
+   ![LAB05_Az204_39](Evidencia/LAB05_Az204_39.png)
 
 10. In the policy code editor, find the following block of XML content:
 
@@ -265,13 +373,19 @@ In this exercise, you created a new Azure web app by using a container image sou
     </outbound>
     ```
 
+    ![LAB05_Az204_40](Evidencia/LAB05_Az204_40.png)
+
 12. In the policy code editor, select **Save**.
 
 13. Back from the **Design** tab, in the list of operations, select **Get Legacy Data**.
 
+    ![LAB05_Az204_41](Evidencia/LAB05_Az204_41.png)
+
 14. From the **Test** tab, select the **Get Legacy Data** operation.
 
 15. In the **Get Legacy Data** section, select **Send**.
+
+    ![LAB05_Az204_42](Evidencia/LAB05_Az204_42.png)
 
 16. Observe the results of the API request.
 
@@ -280,7 +394,14 @@ In this exercise, you created a new Azure web app by using a container image sou
 17. Within the **HTTP response** section, perform the following actions:
 
     1. Select **Trace**.
+
+       ![LAB05_Az204_43](Evidencia/LAB05_Az204_43.png)
+
     2. Observe the content in the **Backend** and **Outbound** text boxes.
+
+       ![LAB05_Az204_44](Evidencia/LAB05_Az204_44.png)
+
+       ![LAB05_Az204_45](Evidencia/LAB05_Az204_45.png)
 
 #### Review
 
@@ -310,7 +431,11 @@ In this exercise, you built a proxy tier between your App Service resource and a
    az group delete --name ApiService --no-wait --yes
    ```
 
+   ![LAB05_Az204_46a](Evidencia/LAB05_Az204_46a.png)
+
 2. Close the Cloud Shell pane in the portal.
+
+   ![LAB05_Az204_47](Evidencia/LAB05_Az204_47.png)
 
 #### Task 3: Close the active applications
 
