@@ -24,9 +24,18 @@ Sign in to your Windows 10 virtual machine (VM) by using the following credentia
 Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for the applications that you’ll use in this lab:
 
 - Microsoft Edge
+
 - File Explorer
+
 - Windows Terminal
+
 - Visual Studio Code
+
+  
+
+  **Architecture**
+
+  ![LAB07-Az204_Architecture_00](Evidencia/LAB07-Az204_00_Architecture.png)
 
 ### Exercise 1: Create Azure resources
 
@@ -38,21 +47,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 3. Enter the email address for your Microsoft account, and then select **Next**.
 
-4. Enter the
-
-    
-
-   password
-
-    
-
-   for your Microsoft account, and then select
-
-    
-
-   Sign in
-
-   .
+4. Enter the password for your Microsoft account, and then select Sign in.
 
    > **Note**: If this is your first time signing in to the Azure portal, you will be offered a tour of the portal. If you prefer to skip the tour, select **Get Started** to begin using the portal.
 
@@ -66,51 +61,41 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 4. From the **Storage accounts** blade, select **New**.
 
-5. Find the tabs from the 
-
-   Create storage account
-
-    blade, such as
-
-    
-
-   Basics
-
-   .
+5. Find the tabs from the Create storage account blade, such as Basics.
 
    > **Note**: Each tab represents a step in the workflow to create a new storage account. You can select **Review + Create** at any time to skip the remaining tabs.
 
-6. From the
+   ![LAB07-Az204_01](Evidencia/LAB07-Az204_01.png)
 
-    
+   ![LAB07-Az204_02](Evidencia/LAB07-Az204_02.png)
 
-   Basics
-
-    
-
-   tab, perform the following actions:
+6. From the Basics tab, perform the following actions:
 
    1. Leave the **Subscription** text box set to its default value.
+
    2. In the **Resource group** section, select **Create new**, enter **ConfidentialStack**, and then select **OK**.
+
    3. In the **Storage account name** text box, enter **securestor[yourname]**.
+
    4. In the **Location** drop-down list, select the **(US) East US** region.
+
    5. In the **Performance** section, select **Standard**.
+
    6. In the **Redundancy** drop-down list, select **Locally-redundant storage (LRS)**.
+
+      ![LAB07-Az204_03](Evidencia/LAB07-Az204_03.png)
+
    7. Select **Review + Create**.
+
+      ![LAB07-Az204_04](Evidencia/LAB07-Az204_04.png)
 
 7. From the **Review + Create** tab, review the options that you selected during the previous steps.
 
-8. Select
-
-    
-
-   Create
-
-    
-
-   to create the storage account by using your specified configuration.
+8. Select Create to create the storage account by using your specified configuration.
 
    > **Note**: Wait for the creation task to complete before you move forward with this lab.
+
+   ![LAB07-Az204_05](Evidencia/LAB07-Az204_05.png)
 
 9. In the Azure portal’s navigation pane, select **All services**.
 
@@ -120,17 +105,15 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 12. From the **Storage account** blade, find the **Security + networking** section, and then select the **Access keys** link.
 
-13. From the 
+    ![LAB07-Az204_06](Evidencia/LAB07-Az204_06.png)
 
-    Access keys
+    ![LAB07-Az204_07](Evidencia/LAB07-Az204_07.png)
 
-     blade, select any one of the keys and record the value in either of the 
-
-    Connection string
-
-     boxes. You’ll use this value later in this lab.
+13. From the Access keys blade, select any one of the keys and record the value in either of the Connection string boxes. You’ll use this value later in this lab.
 
     > **Note**: It doesn’t matter which connection string you choose. They are interchangeable.
+
+![LAB07-Az204_08](Evidencia/LAB07-Az204_08.png)
 
 #### Task 3: Create an Azure Key Vault
 
@@ -142,52 +125,43 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 4. From the **Marketplace** search results blade, select the **Key Vault** result.
 
+   ![LAB07-Az204_09](Evidencia/LAB07-Az204_09.png)
+
 5. From the **Key Vault** blade, select **Create**.
 
-6. Find the tabs from the 
+   ![LAB07-Az204_10](Evidencia/LAB07-Az204_10.png)
 
-   Create key vault
-
-    blade, such as
-
-    
-
-   Basics
-
-   .
+6. Find the tabs from the Create key vault blade, such as Basics.
 
    > **Note**: Each tab represents a step in the workflow to create a new key vault. You can select **Review + Create** at any time to skip the remaining tabs.
 
-7. From the
-
-    
-
-   Basics
-
-    
-
-   tab, perform the following actions:
+7. From the Basics tab, perform the following actions:
 
    1. Leave the **Subscription** text box set to its default value.
+
    2. In the **Resource group** section, select **Use existing**, and then select **ConfidentialStack** in the list.
+
    3. In the **Key vault name** text box, enter **securevault[yourname]**.
+
    4. In the **Region** drop-down list, select the **East US** region.
+
    5. In the **Pricing tier** drop-down list, select **Standard**.
+
    6. Select **Review + Create**.
 
-8. From the **Review + Create** tab, review the options that you selected during the previous steps.
+      ![LAB07-Az204_11](Evidencia/LAB07-Az204_11.png)
 
-9. Select
+   7. From the **Review + Create** tab, review the options that you selected during the previous steps.
 
-    
+      ![LAB07-Az204_12](Evidencia/LAB07-Az204_12.png)
 
-   Create
-
-    
-
-   to create the key vault by using your specified configuration.
+8. Select Create to create the key vault by using your specified configuration.
 
    > **Note**: Wait for the creation task to complete before you move forward with this lab.
+
+![LAB07-Az204_13](Evidencia/LAB07-Az204_13.png)
+
+![LAB07-Az204_14](Evidencia/LAB07-Az204_14.png)
 
 #### Task 4: Create an Azure Functions app
 
@@ -199,71 +173,59 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 4. From the **Marketplace** search results blade, select the **Function App** result.
 
+   ![LAB07-Az204_15](Evidencia/LAB07-Az204_15.png)
+
 5. From the **Function App** blade, select **Create**.
 
-6. Find the tabs from the 
-
-   Function App
-
-    blade, such as
-
-    
-
-   Basics
-
-   .
+6. Find the tabs from the Function App blade, such as Basics.
 
    > **Note**: Each tab represents a step in the workflow to create a new function app. You can select **Review + Create** at any time to skip the remaining tabs.
 
-7. From the
+   ![LAB07-Az204_16](Evidencia/LAB07-Az204_16.png)
 
-    
-
-   Basics
-
-    
-
-   tab, perform the following actions:
+7. From the Basics tab, perform the following actions:
 
    1. Leave the **Subscription** text box set to its default value.
+
    2. In the **Resource group** section, select **Use existing**, and then select **ConfidentialStack** in the list.
+
    3. In the **Function app name** text box, enter **securefunc[yourname]**.
+
    4. In the **Publish** section, select **Code**.
+
    5. In the **Runtime stack** drop-down list, select **.NET**.
+
    6. In the **Version** drop-down list, select **3.1**.
+
    7. In the **Region** drop-down list, select the **East US** region.
+
    8. Select **Next: Hosting**.
 
-8. From the
+      ![LAB07-Az204_17](Evidencia/LAB07-Az204_17.png)
 
-    
-
-   Hosting
-
-    
-
-   tab, perform the following actions:
+8. From the Hosting tab, perform the following actions:
 
    1. In the **Operating System** section, select **Linux**.
+
    2. In the **Storage account** drop-down list, select the **securestor[yourname]** storage account that you created earlier in this lab.
+
    3. In the **Plan type** drop-down list, select the **Consumption (Serverless)** option.
+
    4. Select **Review + Create**.
+
+      ![LAB07-Az204_18](Evidencia/LAB07-Az204_18.png)
 
 9. From the **Review + Create** tab, review the options that you selected during the previous steps.
 
-10. Select
+   ![LAB07-Az204_19](Evidencia/LAB07-Az204_19.png)
 
-     
-
-    Create
-
-     
-
-    to create the function app by using your specified configuration.
+10. Select Create to create the function app by using your specified configuration.
 
     > **Note**: Wait for the creation task to complete before you move forward with this lab.
 
 > **Review**: In this exercise, you created all the resources that you’ll use for this lab.
+
+![LAB07-Az204_20](Evidencia/LAB07-Az204_20.png)
 
 ### Exercise 2: Configure secrets and identities
 
@@ -273,21 +235,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 2. From the **Resource groups** blade, find and then select the **ConfidentialStack** resource group that you created earlier in this lab.
 
-3. From the
-
-    
-
-   ConfidentialStack
-
-    
-
-   blade, select the
-
-    
-
-   securefunc[yourname]
-
-    
+3. From the ConfidentialStack blade, select the securefunc[yourname] 
 
    function app that you created earlier in this lab.
 
@@ -295,35 +243,21 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 4. From the **Function App** blade, select the **Identity** option from the **Settings** section.
 
-5. From the
+   ![LAB07-Az204_21](Evidencia/LAB07-Az204_21.png)
 
-    
-
-   Identity
-
-    
-
-   pane, find the
-
-    
-
-   System assigned
-
-    
-
-   tab, and then perform the following actions:
+5. From the Identity pane, find the System assigned tab, and then perform the following actions:
 
    1. In the **Status** section, select **On**, and then select **Save**.
 
-   2. In the confirmation dialog box, select
+      ![LAB07-Az204_22](Evidencia/LAB07-Az204_22.png)
 
-       
-
-      Yes
-
-      .
+   2. In the confirmation dialog box, select Yes.
 
       > **Note**: Wait for the system-assigned managed identity to be created before you move forward with this lab.
+
+![LAB07-Az204_23](Evidencia/LAB07-Az204_23.png)
+
+![LAB07-Az204_24](Evidencia/LAB07-Az204_24.png)
 
 #### Task 2: Create a Key Vault secret
 
@@ -331,21 +265,21 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 2. From the **Resource groups** blade, find and then select the **ConfidentialStack** resource group that you created earlier in this lab.
 
+   ![LAB07-Az204_25](Evidencia/LAB07-Az204_25.png)
+
 3. From the **ConfidentialStack** blade, select the **securevault[yourname]** key vault that you created earlier in this lab.
+
+   ![LAB07-Az204_26](Evidencia/LAB07-Az204_26.png)
 
 4. From the **Key Vault** blade, select the **Secrets** link in the **Settings** section.
 
+   ![LAB07-Az204_27](Evidencia/LAB07-Az204_27.png)
+
 5. In the **Secrets** pane, select **Generate/Import**.
 
-6. From the
+   ![LAB07-Az204_28](Evidencia/LAB07-Az204_28.png)
 
-    
-
-   Create a secret
-
-    
-
-   blade, perform the following actions:
+6. From the Create a secret blade, perform the following actions:
 
    1. In the **Upload options** drop-down list, select **Manual**.
 
@@ -359,33 +293,19 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
    6. Leave the **Set expiration date** text box set to its default value.
 
-   7. In the
-
-       
-
-      Enabled
-
-       
-
-      section, select
-
-       
-
-      Yes
-
-      , and then select
-
-       
-
-      Create
-
-      .
+   7. In the Enabled section, select Yes, and then select Create.
 
       > **Note**: Wait for the secret to be created before you move forward with this lab.
 
+   ![LAB07-Az204_29](Evidencia/LAB07-Az204_29.png)
+
 7. Return to the Secrets pane, and then select the **storagecredentials** item in the list.
 
+   ![LAB07-Az204_30](Evidencia/LAB07-Az204_30.png)
+
 8. In the Versions pane, select the latest version of the **storagecredentials** secret.
+
+   ![LAB07-Az204_31](Evidencia/LAB07-Az204_31.png)
 
 9. In the Secret Version pane, perform the following actions:
 
@@ -393,17 +313,13 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
    2. Select **Show secret value** to find the value of the secret.
 
-   3. Record the value of the
+      ![LAB07-Az204_32](Evidencia/LAB07-Az204_32.png)
 
-       
-
-      Secret Identifier
-
-       
-
-      text box because you’ll use this later in the lab.
+   3. Record the value of the Secret Identifier text box because you’ll use this later in the lab.
 
       > **Note**: You are recording the value of the **Secret Identifier** text box, not the **Secret Value** text box.
+
+![LAB07-Az204_33](Evidencia/LAB07-Az204_33.png)
 
 #### Task 3: Configure a Key Vault access policy
 
@@ -413,45 +329,25 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 3. From the **ConfidentialStack** blade, select the **securevault[yourname]** key vault that you created earlier in this lab.
 
+   ![LAB07-Az204_34](Evidencia/LAB07-Az204_34.png)
+
 4. From the **Key Vault** blade, select the **Access policies** link in the **Settings** section.
 
 5. In the Access policies pane, select **Add Access Policy**.
 
-6. From the
+   ![LAB07-Az204_35](Evidencia/LAB07-Az204_35.png)
 
-    
-
-   Add access policy
-
-    
-
-   blade, perform the following actions:
+6. From the Add access policy blade, perform the following actions:
 
    1. Select the **Select principal** link.
 
-   2. From the
-
-       
-
-      Principal
-
-       
-
-      blade, find and then select the service principal named
-
-       
-
-      securefunc[yourname]
-
-      , and then select
-
-       
-
-      Select
-
-      .
+   2. From the Principal blade, find and then select the service principal named securefunc[yourname], and then select Select.
 
       > **Note**: The system-assigned managed identity you created earlier in this lab will have the same name as the Azure Function resource.
+
+      ![LAB07-Az204_36](Evidencia/LAB07-Az204_36.png)
+
+      ![LAB07-Az204_37](Evidencia/LAB07-Az204_37.png)
 
    3. Leave the **Key permissions** list set to its default value.
 
@@ -463,15 +359,15 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
    7. Select **Add**.
 
-7. Back in the Access policies pane, select
+      ![LAB07-Az204_38](Evidencia/LAB07-Az204_38.png)
 
-    
-
-   Save
-
-   .
+7. Back in the Access policies pane, select Save.
 
    > **Note**: Wait for your changes to the access policies to save before you move forward with this lab.
+
+![LAB07-Az204_39](Evidencia/LAB07-Az204_39.png)
+
+![LAB07-Az204_40](Evidencia/LAB07-Az204_40.png)
 
 #### Task 4: Create a Key Vault-derived application setting
 
@@ -481,33 +377,19 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 3. From the **ConfidentialStack** blade, select the **securefunc[yourname]** function app that you created earlier in this lab.
 
+   ![LAB07-Az204_41](Evidencia/LAB07-Az204_41.png)
+
 4. From the **App Service** blade, select the **Configuration** option from the **Settings** section.
 
-5. From the
-
-    
-
-   Configuration
-
-    
-
-   pane, perform the following actions:
+5. From the Configuration pane, perform the following actions:
 
    1. Select the **Application settings** tab, and then select **New application setting**.
 
+      ![LAB07-Az204_42](Evidencia/LAB07-Az204_42.png)
+
    2. In the **Add/Edit application setting** pop-up window, in the **Name** text box, enter **StorageConnectionString**.
 
-   3. In the
-
-       
-
-      Value
-
-       
-
-      text box, construct a value by using the following syntax:
-
-       
+   3. In the Value text box, construct a value by using the following syntax: 
 
       ```
       @Microsoft.KeyVault(SecretUri=*Secret Identifier*)
@@ -515,27 +397,25 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
       > **Note**: You’ll need to build a reference to your ***Secret Identifier\*** by using the above syntax. For example, if your secret identifier is `https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf`, your value would be `@Microsoft.KeyVault(SecretUri=https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf)`.
 
+      ![LAB07-Az204_43](Evidencia/LAB07-Az204_43.png)
+
    4. Leave the **deployment slot setting** text box set to its default value.
 
    5. Select **OK** to close the pop-up window and return to the **Configuration** section.
 
    6. Select **Save** from the blade to save your settings.
 
-   7. In the
+      ![LAB07-Az204_44](Evidencia/LAB07-Az204_44.png)
 
-       
+   7. In the Save Changes confirmation pop-up dialog box, select Continue.
 
-      Save Changes
+      ![LAB07-Az204_45](Evidencia/LAB07-Az204_45.png)
 
-       
+      ![LAB07-Az204_46](Evidencia/LAB07-Az204_46.png)
 
-      confirmation pop-up dialog box, select
+      ![LAB07-Az204_46a](Evidencia/LAB07-Az204_46a.png)
 
-       
-
-      Continue
-
-      .
+      
 
       > **Note**: Wait for your application settings to save before you move forward with the lab.
 
@@ -565,6 +445,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
    > **Note**: You can review the documentation to [create a new project][azure-functions-core-tools-new-project] using the **Azure Functions Core Tools**.
 
+   ![LAB07-Az204_47](Evidencia/LAB07-Az204_47.png)
+
 4. Enter the following command, and then select Enter to **build** the .NET Core 3.1 project:
 
    CodeCopy
@@ -572,6 +454,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
    ```powershell
     dotnet build
    ```
+
+![LAB07-Az204_48](Evidencia/LAB07-Az204_48.png)
 
 #### Task 2: Create an HTTP-triggered function
 
@@ -585,6 +469,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
    > **Note**: You can review the documentation to [create a new function][azure-functions-core-tools-new-function] using the **Azure Functions Core Tools**.
 
+   ![LAB07-Az204_49](Evidencia/LAB07-Az204_49.png)
+
 2. Close the currently running **Windows Terminal** application.
 
 #### Task 3: Configure and read an application setting
@@ -594,6 +480,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 2. From the **File** menu, select **Open Folder**.
 
 3. In the **File Explorer** window that opens, browse to **Allfiles (F):\Allfiles\Labs\07\Starter\func**, and then select **Select Folder**.
+
+   ![LAB07-Az204_50](Evidencia/LAB07-Az204_50.png)
 
 4. In the Explorer pane of the **Visual Studio Code** window, open the **local.settings.json** file.
 
@@ -608,6 +496,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     }
    ```
 
+   ![LAB07-Az204_51](Evidencia/LAB07-Az204_51.png)
+
 6. Update the value of the **Values** object by adding a new setting named **StorageConnectionString** and setting it to a string value of **[TEST VALUE]**:
 
    CodeCopy
@@ -619,6 +509,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
         "StorageConnectionString": "[TEST VALUE]"
     }
    ```
+
+   ![LAB07-Az204_52](Evidencia/LAB07-Az204_52.png)
 
 7. The **local.settings.json** file should now include:
 
@@ -635,7 +527,13 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     }
    ```
 
+   ![LAB07-Az204_53](Evidencia/LAB07-Az204_53.png)
+
+   ![LAB07-Az204_54](Evidencia/LAB07-Az204_54.png)
+
 8. In the Explorer pane of the **Visual Studio Code** window, open the **FileParser.cs** file.
+
+   ![LAB07-Az204_55](Evidencia/LAB07-Az204_55.png)
 
 9. In the code editor, observe the example implementation:
 
@@ -681,6 +579,10 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 10. Delete all of the content within the **FileParser.cs** file.
 
+    ![LAB07-Az204_56](Evidencia/LAB07-Az204_56.png)
+
+    ![LAB07-Az204_57](Evidencia/LAB07-Az204_57.png)
+
 11. Add the following lines of code to add **using directives** for the **Microsoft.AspNetCore.Mvc**, **Microsoft.Azure.WebJobs**, **Microsoft.AspNetCore.Http**, **System**, and **System.Threading.Tasks** namespaces:
 
     C#Copy
@@ -693,6 +595,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
      using System.Threading.Tasks;
     ```
 
+    ![LAB07-Az204_58](Evidencia/LAB07-Az204_58.png)
+
 12. Create a new **public static** class named **FileParser**:
 
     C#Copy
@@ -701,6 +605,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
      public static class FileParser
      { }
     ```
+
+    ![LAB07-Az204_59](Evidencia/LAB07-Az204_59.png)
 
 13. Observe the **FileParser.cs** file again, which should now include:
 
@@ -727,6 +633,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
      { }
     ```
 
+    ![LAB07-Az204_60](Evidencia/LAB07-Az204_60.png)
+
 15. Add the following code to append an attribute to the **Run** method of type **FunctionNameAttribute** that has its **name** parameter set to a value of **FileParser**:
 
     C#Copy
@@ -738,6 +646,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
      { }
     ```
 
+    ![LAB07-Az204_61](Evidencia/LAB07-Az204_61.png)
+
 16. Add the following code to append an attribute to the **request** paramter of type **HttpTriggerAttribute** that has its **methods** parameter array set to a single value of **GET**:
 
     C#Copy
@@ -748,6 +658,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
          [HttpTrigger("GET")] HttpRequest request)
      { }
     ```
+
+    ![LAB07-Az204_62](Evidencia/LAB07-Az204_62.png)
 
 17. Observe the **FileParser.cs** file again, which should now include:
 
@@ -777,6 +689,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
      string connectionString = Environment.GetEnvironmentVariable("StorageConnectionString");
     ```
 
+    ![LAB07-Az204_63](Evidencia/LAB07-Az204_63.png)
+
 19. Enter the following line of code to return the value of the **connectionString** variable as the HTTP response:
 
     C#Copy
@@ -784,6 +698,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     ```csharp
      return new OkObjectResult(connectionString);
     ```
+
+    ![LAB07-Az204_64](Evidencia/LAB07-Az204_64.png)
 
 20. Observe the **FileParser.cs** file again, which should now include:
 
@@ -808,7 +724,11 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
      }
     ```
 
+    ![LAB07-Az204_65](Evidencia/LAB07-Az204_65.png)
+
 21. Select **Save** to save your changes to the **FileParser.cs** file.
+
+    ![LAB07-Az204_66](Evidencia/LAB07-Az204_66.png)
 
 #### Task 4: Validate the local function
 
@@ -831,6 +751,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
    ```
 
    > **Note**: You can review the documentation to [start the function app project locally][azure-functions-core-tools-start-function] using the **Azure Functions Core Tools**.
+
+   ![LAB07-Az204_67](Evidencia/LAB07-Az204_67.png)
 
 4. On the taskbar, select the **Windows Terminal** icon again to open a new instance of the **Windows Terminal** application.
 
@@ -882,6 +804,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     [TEST VALUE]
    ```
 
+   ![LAB07-Az204_68](Evidencia/LAB07-Az204_68.png)
+
 10. Enter the following command, and then select Enter to exit the **httprepl** application:
 
     CodeCopy
@@ -890,7 +814,11 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
      exit
     ```
 
+    ![LAB07-Az204_69](Evidencia/LAB07-Az204_69.png)
+
 11. Close all currently running instances of the **Windows Terminal** application.
+
+    ![LAB07-Az204_70](Evidencia/LAB07-Az204_70.png)
 
 #### Task 5: Deploy using the Azure Functions Core Tools
 
@@ -912,22 +840,21 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     az login
    ```
 
-4. In the
+   
 
-    
+4. In the Microsoft Edge browser window, perform the following actions:
 
-   Microsoft Edge
+   a. Enter the email address for your Microsoft account, and then select **Next**.
 
-    
+   b. Enter the password for your Microsoft account, and then select **Sign in**.
 
-   browser window, perform the following actions:
+   ![LAB07-Az204_71](Evidencia/LAB07-Az204_71.png)
 
-   1. Enter the email address for your Microsoft account, and then select **Next**.
-   2. Enter the password for your Microsoft account, and then select **Sign in**.
+   5. Return to the currently open **Windows Terminal** window. Wait for the sign-in process to finish.
 
-5. Return to the currently open **Windows Terminal** window. Wait for the sign-in process to finish.
+      ![LAB07-Az204_72](Evidencia/LAB07-Az204_72.png)
 
-6. Enter the following command, and then select Enter to publish the function app project:
+   6. Enter the following command, and then select Enter to publish the function app project:
 
    CodeCopy
 
@@ -937,24 +864,49 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
    > **Note**: As an example, if your **Function App name** is **securefuncstudent**, your command would be `func azure functionapp publish securefuncstudent`. You can review the documentation to [publish the local function app project][azure-functions-core-tools-publish-azure] using the **Azure Functions Core Tools**.
 
-7. Wait for the deployment to finalize before you move forward with the lab.
+   ![LAB07-Az204_73](Evidencia/LAB07-Az204_73.png)
 
-8. Close the currently running **Windows Terminal** application.
+   7. Wait for the deployment to finalize before you move forward with the lab.
+
+   8. Close the currently running **Windows Terminal** application.
+
+   
 
 #### Task 6: Test the Key Vault-derived application setting
 
 1. On the taskbar, select the **Microsoft Edge** icon.
+
 2. In the open browser window, go to the Azure portal ([https://portal.azure.com](https://portal.azure.com/)).
+
 3. In the Azure portal’s navigation pane, select the **Resource groups** link.
+
 4. On the **Resource groups** blade, find and then select the **ConfidentialStack** resource group that you created earlier in this lab.
+
 5. On the **ConfidentialStack** blade, select the **securefunc[yourname]** function app that you created earlier in this lab.
+
+   ![LAB07-Az204_74](Evidencia/LAB07-Az204_74.png)
+
 6. From the **App Service** blade, select the **Functions** option from the **Functions** section.
+
 7. In the **Functions** pane, select the the existing **FileParser** function.
+
+   ![LAB07-Az204_75](Evidencia/LAB07-Az204_75.png)
+
 8. In the **Function** blade, select the **Code + Test** option from the **Developer** section.
+
+   ![LAB07-Az204_76](Evidencia/LAB07-Az204_76.png)
+
 9. In the function editor, select **Test/Run**.
+
+   ![LAB07-Az204_77](Evidencia/LAB07-Az204_77.png)
+
 10. In the pop-up dialog box that appears, perform the following actions:
     - In the **HTTP method** list, select **GET**.
+
 11. Select **Run** to test the function.
+
+    ![LAB07-Az204_78](Evidencia/LAB07-Az204_78.png)
+
 12. Observe the results of the test run. The result should be your Azure Storage connection string.
 
 > **Review**: In this exercise, you used a service identity to read the value of a secret stored in Key Vault and returned that value as the result of a function app.
@@ -969,62 +921,49 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 3. From the **ConfidentialStack** blade, select the **securestor[yourname]** storage account that you created earlier in this lab.
 
+   ![LAB07-Az204_79](Evidencia/LAB07-Az204_79.png)
+
 4. From the **Storage account** blade, select the **Containers** link in the **Data storage** section.
+
+   ![LAB07-Az204_80](Evidencia/LAB07-Az204_80.png)
 
 5. In the **Containers** section, select **+ Container**.
 
-6. In the
-
-    
-
-   New container
-
-    
-
-   pop-up window, perform the following actions:
+6. In the New container pop-up window, perform the following actions:
 
    1. In the **Name** text box, enter **drop**.
+
    2. In the **Public access level** drop-down list, select **Blob (anonymous read access for blobs only)**, and then select **Create**.
+
+      ![LAB07-Az204_81](Evidencia/LAB07-Az204_81.png)
 
 7. Return to the **Containers** section, and then select the newly created **drop** container.
 
+   ![LAB07-Az204_82](Evidencia/LAB07-Az204_82.png)
+
 8. From the **Container** blade, select **Upload**.
 
-9. In the
-
-    
-
-   Upload blob
-
-    
-
-   pop-up window, perform the following actions:
+9. In the Upload blob pop-up window, perform the following actions:
 
    1. In the **Files** section, select the **Folder** icon.
 
    2. In the **File Explorer** window, browse to **Allfiles (F):\Allfiles\Labs\07\Starter**, select the **records.json** file, and then select **Open**.
 
-   3. Ensure that
+      ![LAB07-Az204_83](Evidencia/LAB07-Az204_83.png)
 
-       
-
-      Overwrite if files already exist
-
-       
-
-      is selected, and then select
-
-       
-
-      Upload
-
-      .
+   3. Ensure that Overwrite if files already exist is selected, and then select Upload.
 
       > **Note**: Wait for the blob to upload before you continue with this lab.
 
+   ![LAB07-Az204_84](Evidencia/LAB07-Az204_84.png)
+
 10. Return to the **Container** blade, and then select the **records.json** blob in the list of blobs.
 
+    ![LAB07-Az204_85](Evidencia/LAB07-Az204_85.png)
+
 11. From the **Blob** blade, find the blob metadata, and then copy the URL for the blob.
+
+    ![LAB07-Az204_86](Evidencia/LAB07-Az204_86.png)
 
 12. On the taskbar, right-click the **Microsoft Edge** icon or activate the shortcut menu, and then select **New window**.
 
@@ -1032,22 +971,23 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 14. The JavaScript Object Notation (JSON) contents of the blob should now display. Close the browser window with the JSON contents.
 
+    ![LAB07-Az204_87](Evidencia/LAB07-Az204_87.png)
+
 15. Return to the browser window with the Azure portal, and then close the **Blob** blade.
 
 16. Return to the **Container** blade, and then select **Change access level**.
 
-17. In the
+    ![LAB07-Az204_88](Evidencia/LAB07-Az204_88.png)
 
-     
-
-    Change access level
-
-     
-
-    pop-up window, perform the following actions:
+17. In the Change access level pop-up window, perform the following actions:
 
     1. In the **Public access level** drop-down list, select **Private (no anonymous access)**.
+
     2. Select **OK**.
+
+       ![LAB07-Az204_89](Evidencia/LAB07-Az204_89.png)
+
+       ![LAB07-Az204_90](Evidencia/LAB07-Az204_90.png)
 
 18. On the taskbar, right-click the **Microsoft Edge** icon or activate the shortcut menu, and then select **New window**.
 
@@ -1056,6 +996,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 20. An error message indicating that the resource wasn’t found should now display.
 
     > **Note**: If the error message doesn’t display, your browser might have cached the file. Press Ctrl+F5 to refresh the page until the error message displays.
+
+![LAB07-Az204_91](Evidencia/LAB07-Az204_91.png)
 
 #### Task 2: Pull and configure the Azure SDK for .NET
 
@@ -1079,6 +1021,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
    > **Note**: The [Azure.Storage.Blobs](https://www.nuget.org/packages/Azure.Storage.Blobs/12.6.0) NuGet package references the subset of the Azure SDK for .NET required to write code for Azure Blob Storage.
 
+   ![LAB07-Az204_92](Evidencia/LAB07-Az204_92.png)
+
 4. Close the currently running **Windows Terminal** application.
 
 5. On the **Start** screen, select the **Visual Studio Code** tile.
@@ -1087,7 +1031,11 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 7. In the **File Explorer** window that opens, browse to **Allfiles (F):\Allfiles\Labs\07\Starter\func**, and then select **Select Folder**.
 
+   ![LAB07-Az204_93](Evidencia/LAB07-Az204_93.png)
+
 8. In the Explorer pane of the **Visual Studio Code** window, open the **FileParser.cs** file.
+
+   ![LAB07-Az204_94](Evidencia/LAB07-Az204_94.png)
 
 9. Add a **using directive** for the **Azure.Storage.Blobs** namespace:
 
@@ -1096,6 +1044,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
    ```csharp
     using Azure.Storage.Blobs;
    ```
+
+   ![LAB07-Az204_94](Evidencia/LAB07-Az204_94.png)
 
 10. Observe the **FileParser.cs** file, which should now include:
 
@@ -1131,6 +1081,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     return new OkObjectResult(connectionString);
    ```
 
+   ![LAB07-Az204_95](Evidencia/LAB07-Az204_95.png)
+
 2. Still within the **Run** method, add the following code block to create a new instance of the **BlobClient** class by passing in your *connectionString* variable, a `"drop"` string value, and a `"records.json"` string value to the constructor:
 
    C#Copy
@@ -1138,6 +1090,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
    ```csharp
     BlobClient blob = new BlobClient(connectionString, "drop", "records.json");
    ```
+
+   ![LAB07-Az204_97](Evidencia/LAB07-Az204_97.png)
 
 3. Still within the **Run** method, add the following code block to use the **BlobClient.DownloadAsync** method to download the contents of the referenced blob asynchronously and store the result in a variable named *response*:
 
@@ -1147,6 +1101,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     var response = await blob.DownloadAsync();
    ```
 
+   ![LAB07-Az204_98](Evidencia/LAB07-Az204_98.png)
+
 4. Still within the **Run** method, add the following code block to return the value of the various content stored in the *content* variable by using the **FileStreamResult** class constructor:
 
    C#Copy
@@ -1154,6 +1110,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
    ```csharp
     return new FileStreamResult(response?.Value?.Content, response?.Value?.ContentType);
    ```
+
+   ![LAB07-Az204_99](Evidencia/LAB07-Az204_99.png)
 
 5. Observe the **FileParser.cs** file again, which should now include:
 
@@ -1181,7 +1139,11 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     }
    ```
 
+   ![LAB07-Az204_100a](Evidencia/LAB07-Az204_100a.png)
+
 6. Select **Save** to save your changes to the **FileParser.cs** file.
+
+   ![LAB07-Az204_101](Evidencia/LAB07-Az204_101.png)
 
 #### Task 4: Deploy and validate the Azure Functions app
 
@@ -1203,18 +1165,13 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     az login
    ```
 
-4. In the
-
-    
-
-   Microsoft Edge
-
-    
-
-   browser window, perform the following actions:
+4. In the Microsoft Edge browser window, perform the following actions:
 
    1. Enter the email address for your Microsoft account, and then select **Next**.
+
    2. Enter the password for your Microsoft account, and then select **Sign in**.
+
+      ![LAB07-Az204_102](Evidencia/LAB07-Az204_102.png)
 
 5. Return to the currently open **Windows Terminal** window. Wait for the sign-in process to finish.
 
@@ -1227,6 +1184,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
    ```
 
    > **Note**: As an example, if your **Function App name** is **securefuncstudent**, your command would be `func azure functionapp publish securefuncstudent`. You can review the documentation to [publish the local function app project][azure-functions-core-tools-publish-azure] using the **Azure Functions Core Tools**.
+
+   ![LAB07-Az204_103](Evidencia/LAB07-Az204_103.png)
 
 7. Wait for the deployment to finalize before you move forward with the lab.
 
@@ -1242,21 +1201,31 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 13. On the **ConfidentialStack** blade, select the **securefunc[yourname]** function app that you created earlier in this lab.
 
+    ![LAB07-Az204_104](Evidencia/LAB07-Az204_104.png)
+
 14. From the **App Service** blade, select the **Functions** option from the **Functions** section.
 
 15. In the **Functions** pane, select the the existing **FileParser** function.
+
+    ![LAB07-Az204_105](Evidencia/LAB07-Az204_105.png)
 
 16. In the **Function** blade, select the **Code + Test** option from the **Developer** section.
 
 17. In the function editor, select **Test/Run**.
 
+    ![LAB07-Az204_106](Evidencia/LAB07-Az204_106.png)
+
 18. In the pop-up dialog box that appears, perform the following actions:
 
     - In the **HTTP method** list, select **GET**.
 
+      ![LAB07-Az204_107](Evidencia/LAB07-Az204_107.png)
+
 19. Select **Run** to test the function.
 
 20. Observe the results of the test run. The output will contain the content of the **$/drop/records.json** blob stored in your Azure Storage account.
+
+    ![LAB07-Az204_108](Evidencia/LAB07-Az204_108.png)
 
 > **Review**: In this exercise, you used C# code to access a storage account, and then downloaded the contents of a blob.
 
@@ -1268,9 +1237,13 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
    > **Note**: The **Cloud Shell** icon is represented by a greater than sign (>) and underscore character (_).
 
+   ![LAB07-Az204_109](Evidencia/LAB07-Az204_109.png)
+
 2. If this is your first time opening Cloud Shell using your subscription, you can use the **Welcome to Azure Cloud Shell Wizard** to configure Cloud Shell for first-time usage. Perform the following actions in the wizard:
 
    1. A dialog box prompts you to configure the shell. Select **Bash**, review the selected subscription, and then select **Create storage**.
+
+      ![LAB07-Az204_110](Evidencia/LAB07-Az204_110.png)
 
    > **Note**: Wait for Cloud Shell to finish its initial setup procedures before moving forward with the lab. If Cloud Shell configuration options don’t display, this is most likely because you are using an existing subscription with this course’s labs. The labs are written with the presumption that you are using a new subscription.
 
@@ -1284,7 +1257,13 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     az group delete --name ConfidentialStack --no-wait --yes
    ```
 
+   ![LAB07-Az204_111](Evidencia/LAB07-Az204_111.png)
+
+   
+
 2. Close the Cloud Shell pane in the portal.
+
+   ![LAB07-Az204_112](Evidencia/LAB07-Az204_112.png)
 
 #### Task 3: Close the active application
 
