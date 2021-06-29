@@ -6,8 +6,6 @@ Given the dynamic nature of Microsoft cloud tools, you might experience Azure UI
 
 Microsoft updates this training course when the community brings needed changes to our attention; however, because cloud updates occur frequently, you might encounter UI changes before this training content updates. **If this occurs, adapt to the changes, and then work through them in the labs as needed.**
 
-![LAB10_Az204_00_Architecture](Evidencia/LAB10_Az204_00_Architecture.png)
-
 ## Instructions
 
 ### Before you start
@@ -28,6 +26,10 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 - Microsoft Edge
 - Visual Studio Code
 - Azure Storage Explorer
+
+**Architecture**
+
+![LAB10_Az204_00_Architecture](Evidencia/LAB10_Az204_00_Architecture.png)
 
 ### Exercise 1: Create Azure resources
 
