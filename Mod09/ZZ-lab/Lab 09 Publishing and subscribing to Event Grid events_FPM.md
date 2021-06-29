@@ -27,7 +27,11 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 - Microsoft Visual Studio Code
 
-  ![LAB09-Az204_00_Architecture](Evidencia/LAB09-Az204_00_Architecture.png)
+  
+
+**Architecture**
+
+![LAB09-Az204_00_Architecture](Evidencia/LAB09-Az204_00_Architecture.png)
 
 ### Exercise 1: Create Azure resources
 
