@@ -28,6 +28,10 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 - Visual Studio Code
 - Windows PowerShell
 
+
+
+**Architecture**
+
 ![LAB11-Az204_00_Architecture](Evidencia/LAB11-Az204_00_Architecture.png)
 
 ### Exercise 1: Create and configure Azure resources
