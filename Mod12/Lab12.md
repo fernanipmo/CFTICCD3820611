@@ -1,55 +1,121 @@
-Application Setting / Configuration
 
-APPINSIGHTS_INSTRUMENTATIONKEY
+
+**landingpage\[yourname]** web app
+
+**URL** 
+
+````
+http://landingpagefpm.azurewebsites.net/
+````
+
+
 
 ```
-
+https://landingpage[yourname].azurewebsites.net
 ```
 
-URL Web App  
-**smpapi[yourname]**
+**Blob storage / media container** 
+
+**URI**
 
 ```
-
+https://contenthost[youname].blob.core.windows.net/media
 ```
 
-Exercise 2 Task 1
+````
+https://contenthostfpm.blob.core.windows.net/media
+````
+
+**Blob storage / video container**
+
+**URI**
 
 ```
-dotnet new webapi --output . --name SimpleApi --framework netcoreapp3.1
+https://contenthost[yourname].blob.core.windows.net/video
+```
+
+````
+https://contenthostfpm.blob.core.windows.net/video
+````
+
+
+
+**CDN Profile:  ``` contentdeliverynetwork  ```**
+
+**cdnmedia[yourname]** endpoint:
+
+```
+https://cdnmediafpm.azureedge.net
 ```
 
 
 
-Otros
-
+```
+https://cdnmedia[yourname].azureedge.net
 ```
 
-```
 
-Exercise 3 Task 1,9
+**CDN Profile:  ``` contentdeliverynetwork  ```**
 
-publish and prepare to deployment
+**cdnvideo[yourname]** endpoint:
 
-```
-dotnet publish -o ./Api --framework netcoreapp3.1
-
-dir -s | ForEach-Object { & "C:\Program Files\7-Zip\7z.exe" a -tzip ("Apizip.zip") $_.Name }
-```
+````
+https://cdnvideofpm.azureedge.net
+````
 
 ```
-az webapp deployment source config-zip --resource-group MonitoredAssets --src api.zip --name smpapi[yourname]
-```
-```
-
-```
-```
-az webapp deployment source show --name smpapi[yourname] --resource-group MonitoredAssets
+https://cdnvideo[yourname].azureedge.net
 ```
 
-Browse
+
+
+**Test multimedia**
+
+````
+https://cdnmediafpm.azureedge.net/campus.jpg
+````
 
 ```
-https://smpapi[yourname].azurewebsites.net/weatherforecast
+https://cdnmedia[yourname].azureedge.net/campus.jpg
+```
+
+**Test multimedia**
+
+````
+https://cdnmediafpm.azureedge.net/poster.jpg
+````
+
+```
+https://cdnmedia[yourname].azureedge.net/poster.jpg
+```
+
+**Test multimedia**
+
+````
+https://cdnmediafpm.azureedge.net/conference.jpg
+````
+
+```
+https://cdnmedia[yourname].azureedge.net/conference.jpg
+```
+
+
+
+**Test multimedia**
+
+````
+https://cdnvideofpm.azureedge.net/welcome.mp4
+````
+
+```
+https://cdnvideo[yourname].azureedge.net/welcome.mp4
+```
+
+**CDN Profile:  ``` contentdeliverynetwork  ```**
+
+**cdnweb[yourname]** endpoint:
+
+```
+https://cdnwebfpm.azureedge.net
 ```
 
